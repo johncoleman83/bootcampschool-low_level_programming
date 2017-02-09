@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
 
 /**
  * main - Entry point
@@ -9,6 +7,20 @@
  */
 int main(void)
 {
+	int i;
 
+	i = 0;
+
+	while (i < 10)
+	{
+		putchar(i % 10 + '0');
+		if (i < 9)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+		i++;
+	}
+	putchar('\n');
 	return (0);
 }
