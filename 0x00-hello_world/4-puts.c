@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 /**
- * program to print message
+ * main - Entry Point
  *
  * Return: nothing
  */
-int main()
+
+int main(void)
 {
-puts("\"Programming is like building a multilingual puzzle\n");
-return (0);
+	puts("\"Programming is like building a multilingual puzzle\n");
+	return (0);
 }
