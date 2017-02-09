@@ -13,7 +13,7 @@ int main(void)
 	int t;
 	char *greaterfive = "and is greater than 5\n";
 	char *lesssix = "and is less than 6 and not 0\n";
-	char *zero = "and is zero\n";
+	char *zero = "and is 0\n";
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
