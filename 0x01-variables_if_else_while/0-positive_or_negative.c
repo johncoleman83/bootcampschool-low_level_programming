@@ -3,21 +3,15 @@
 #include <stdlib.h>
 
 /**
- * function_name - main
+ * main - Entry point
  *
- * Description: C programming learning
- *
- * Return: 0 no return
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
 	int n;
-
 	char *positive = "positive\n";
-
 	char *negative = "negative\n";
-
 	char *zero = "zero\n";
 
 	srand(time(0));
