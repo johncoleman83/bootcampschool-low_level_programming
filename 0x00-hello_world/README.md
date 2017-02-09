@@ -2,11 +2,12 @@
 
 ## Description
 
-This Repo has some of my (David John Coleman II) projects for Holberton School.  The focus of these projects are learning the C Programming Language.
+This Repo has some of my (David John Coleman II) projects for Holberton School.
+The focus of these projects are learning the C Programming Language.
 
 ## URL
 
-https://github.com/johncoleman83/holbertonschool-low_level_programming/0x00-hello_world
+https://github.com/johncoleman83/holbertonschool-low_level_programming/
 
 ## Author
 
