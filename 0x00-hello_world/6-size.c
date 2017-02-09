@@ -14,12 +14,6 @@ int main(void)
 	long long Alonglong;
 	float Afloat;
 
-/*	Acharacter = sizeof(Acharacter);
- *	Ainteger = sizeof(Ainteger);
- *	Along = sizeof(Along);
-	Alonglong = sizeof(Alonglong);
-	Afloat = sizeof(Afloat);
-*/
 	printf("Size of a char: %lu byte(s)\n\
 Size of an int: %lu byte(s)\n\
 Size of a long int: %lu byte(s)\n\
