@@ -18,7 +18,6 @@ int main(void)
 		putchar(i % 10 + '0');
 		i++;
 	}
-	
 	while (j < 103)
 	{
 	    putchar(j);
