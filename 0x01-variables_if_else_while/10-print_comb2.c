@@ -1,18 +1,14 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
 /**
- * function_name - main
- * @parameterx: delete if void
+ * main - Entry point
  *
- * Description: C programming learning
- *
- * Return: 0 no return
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
 
-
-
-	return(0);
+	return (0);
 }
