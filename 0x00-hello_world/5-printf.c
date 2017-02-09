@@ -3,7 +3,7 @@
 /**
  * main - input
  *
- * return - null
+ * return: null
  */
 
 int main()
