@@ -8,20 +8,24 @@
 int main(void)
 {
 	int i;
-	char j;
 
 	i = 0;
-	j = 'a';
 
-	while (i < 10)
+	while (i < 103)
 	{
+		if (i == 10)
+		{
+			i = 97;
+		}
+		if (i >= 97)
+		{
+			putchar(i);
+		}
+		else
+		{
 		putchar(i % 10 + '0');
+		}
 		i++;
-	}
-	while (j < 103)
-	{
-	    putchar(j);
-		j++;
 	}
 	putchar('\n');
 	return (0);
