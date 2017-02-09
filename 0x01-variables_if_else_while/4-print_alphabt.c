@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
 
 /**
  * main - Entry point
@@ -9,6 +7,15 @@
  */
 int main(void)
 {
+	char i;
 
+	i = 'a';
+	while (i <= 122)
+	{
+		i == 'e' || i == 'q' ? i++ : i;
+		putchar(i);
+		i++;
+	}
+	putchar('\n');
 	return (0);
 }
