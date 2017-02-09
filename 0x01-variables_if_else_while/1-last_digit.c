@@ -12,7 +12,7 @@ int main(void)
 	int n;
 	int t;
 	char *greaterfive = "and is greater than 5\n";
-	char *lesssix = "and is less than 6\n";
+	char *lesssix = "and is less than 6 and not 0\n";
 	char *zero = "and is zero\n";
 
 	srand(time(0));
