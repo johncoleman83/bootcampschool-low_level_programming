@@ -21,5 +21,6 @@ int main(void)
 
 	printf("Last digit of %d is %d ", n, t);
 	printf("%s", t == 0 ? zero : t > 5 ? greaterfive : lesssix);
+
 	return (0);
 }
