@@ -9,14 +9,14 @@
  */
 int main(void)
 {
-	int i;
+	int i = 48;
 
-	i = 0;
-	while (i < 10)
+	while (i <= 57)
 	{
-		putchar(i % 10 + '0');
+		putchar(i);
 		i++;
 	}
+
 	putchar('\n');
 	return (0);
 }
