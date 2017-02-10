@@ -6,18 +6,44 @@ you basically have to learn that in C language...
 
 int main(void)
 {
-	int i;
-	int j;
-	
-	i = 0;
-	j = '0';
-	
-	if (i == j) {
-		printf("char %c: int: %d == char: %c: int: %d\n", i, i, j, j);
+	int i, k;
+	char j, l;
+	i = '0';
+	l = '0';
+	j = 48;
+	k = 48;
+	printf("integer '0'\n");
+
+	while (i < 58)
+	{
+		putchar(i);
+		i++;
 	}
-	
-	if (i != j) {
-		printf("char: %c: int: %d != char: %c: int: %d\n", i, i, j, j);
+	putchar('\n');
+
+	printf("character '0'\n");
+	while (l < 58)
+	{
+		putchar(l);
+		l++;
 	}
+	putchar('\n');
+
+	printf("character 47\n");
+	while (j < 58)
+	{
+		putchar(j);
+		j++;
+	}
+	putchar('\n');
+
+	printf("integer 47\n");
+	while (k < 58)
+	{
+		putchar(k);
+		k++;
+	}
+	putchar('\n');
+
 	return 0;
 }
