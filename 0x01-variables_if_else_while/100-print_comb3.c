@@ -7,8 +7,7 @@
  */
 int main(void)
 {
-	int i;
-	int j;
+	int i, j;
 
 	i = 1;
 
@@ -17,7 +16,7 @@ int main(void)
 		if (i % 10 == 0)
 		{
 			j = i / 10;
-			i = i + j + 1;
+			i += j + 1;
 		}
 		putchar(i / 10 % 10 + '0');
 		putchar(i % 10 + '0');
