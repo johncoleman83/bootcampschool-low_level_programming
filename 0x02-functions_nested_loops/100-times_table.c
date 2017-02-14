@@ -8,10 +8,7 @@
  */
 void print_times_table(int n)
 {
-	if (n > 15 || n < 0)
-	{
-	}
-	else
+	if (n < 16 && n > -1)
 	{
 		int column, row, sum, h, t, o;
 
@@ -22,9 +19,7 @@ void print_times_table(int n)
 			while (row <= n)
 			{
 				sum = column * row;
-				h = sum / 100;
-				t = sum / 10 % 10;
-				o = sum % 10;
+				h = sum / 100, t = sum / 10 % 10, o = sum % 10;
 				if (row == 0)
 				{
 					_putchar(sum + '0');
