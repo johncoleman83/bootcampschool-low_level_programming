@@ -16,18 +16,16 @@ void times_table(void)
 		row = 1;
 		while (row < 10)
 		{
+			_putchar(',');
+			_putchar(' ');
 			sum = column * row, t = sum / 10;
-			else if (sum < 10)
+			if (sum < 10)
 			{
-				_putchar(',');
-				_putchar(' ');
 				_putchar(' ');
 				_putchar(sum + '0');
 			}
 			else
 			{
-				_putchar(',');
-				_putchar(' ');
 				_putchar(t + '0');
 				_putchar(sum % 10 + '0');
 			}
