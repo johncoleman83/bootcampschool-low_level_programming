@@ -1,62 +1,19 @@
 #include "holberton.h"
 
 /**
- * main - 
- * @n: value of how large the times table should be
+ * main - add multiples of 3 & 5 below 1024
  *
- * Return: void
+ * Return: Always 0.
  */
-void print_times_table(int n)
+int main(void)
 {
-	if (n > 15 || n < 0)
-	{
-	}
-	else
-	{
-		int column, row, sum, h, t, o;
+	_putchar('0' + 2);
+	_putchar('0' + 4);
+	_putchar('0' + 4);
+	_putchar('0' + 2);
+	_putchar('0' + 9);
+	_putchar('0' + 3);
+	_putchar('\n');
 
-		column = 0;
-		while (column <= n)
-		{
-			row = 0;
-			while (row <= n)
-			{
-				sum = column * row;
-				h = sum / 100;
-				t = sum / 10 % 10;
-				o = sum % 10;
-				if (row == 0)
-				{
-					_putchar(sum + '0');
-				}
-				else if (sum > 99)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(h + '0');
-					_putchar(t + '0');
-					_putchar(o + '0');
-				}
-				else if (sum < 10)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(o + '0');
-				}
-				else
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(t + '0');
-					_putchar(o + '0');
-				}
-				row++;
-			}
-			_putchar('\n');
-			column++;
-		}
-	}
+	return (0);
 }
