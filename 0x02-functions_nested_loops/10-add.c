@@ -9,7 +9,7 @@
  */
 int add(int a, int b)
 {
-	long sum;
+	double sum;
 
 	sum = a + b;
 	return (sum);
