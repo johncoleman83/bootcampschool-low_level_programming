@@ -12,14 +12,11 @@ void times_table(void)
 	column = 0;
 	while (column < 10)
 	{
-		row = 0;
+		_putchar('0');
+		row = 1;
 		while (row < 10)
 		{
 			sum = column * row, t = sum / 10;
-			if (row == 0)
-			{
-				_putchar(sum + '0');
-			}
 			else if (sum < 10)
 			{
 				_putchar(',');
