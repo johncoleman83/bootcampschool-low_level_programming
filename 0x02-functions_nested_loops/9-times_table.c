@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * time_table - prints 9x table
+ * times_table - prints 9x table
  *
  * Return: void
  */
@@ -9,6 +9,7 @@ void times_table(void)
 {
 	int column, row;
 	int sum;
+
 	column = 0;
 	while (column < 10)
 	{
@@ -20,7 +21,7 @@ void times_table(void)
 			{
 				_putchar(sum + '0');
 			}
-			else if (sum < 10 )
+			else if (sum < 10)
 			{
 				_putchar(',');
 				_putchar(' ');
