@@ -15,35 +15,28 @@ void print_times_table(int n)
 		column = 0;
 		while (column <= n)
 		{
-			row = 0;
+			_putchar('0');
+			row = 1;
 			while (row <= n)
 			{
 				sum = column * row;
 				h = sum / 100, t = sum / 10 % 10, o = sum % 10;
-				if (row == 0)
+				_putchar(',');
+				_putchar(' ');
+				if (sum > 99)
 				{
-					_putchar(sum + '0');
-				}
-				else if (sum > 99)
-				{
-					_putchar(',');
-					_putchar(' ');
 					_putchar(h + '0');
 					_putchar(t + '0');
 					_putchar(o + '0');
 				}
 				else if (sum < 10)
 				{
-					_putchar(',');
-					_putchar(' ');
 					_putchar(' ');
 					_putchar(' ');
 					_putchar(o + '0');
 				}
 				else
 				{
-					_putchar(',');
-					_putchar(' ');
 					_putchar(' ');
 					_putchar(t + '0');
 					_putchar(o + '0');
