@@ -7,8 +7,7 @@
  */
 void times_table(void)
 {
-	int column, row;
-	int sum;
+	int column, row, sum, t;
 
 	column = 0;
 	while (column < 10)
@@ -16,7 +15,7 @@ void times_table(void)
 		row = 0;
 		while (row < 10)
 		{
-			sum = column * row;
+			sum = column * row, t = sum / 10;
 			if (row == 0)
 			{
 				_putchar(sum + '0');
@@ -32,7 +31,7 @@ void times_table(void)
 			{
 				_putchar(',');
 				_putchar(' ');
-				_putchar(sum / 10 + '0');
+				_putchar(t + '0');
 				_putchar(sum % 10 + '0');
 			}
 			row++;

@@ -13,10 +13,7 @@ void print_to_98(int n)
 
 	while (n != 98)
 	{
-		a = abs(n);
-		h = a / 100;
-		t = a / 10 % 10;
-		o = a  % 10;
+		a = abs(n), h = a / 100, t = a / 10 % 10, o = a  % 10;
 		if (h > 0)
 		{
 			a != n ? _putchar('-') : a;
