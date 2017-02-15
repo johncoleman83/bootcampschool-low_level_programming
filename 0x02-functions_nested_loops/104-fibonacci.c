@@ -14,7 +14,7 @@ int main(void)
 	x = 1, y = 2;
 	while (i < 98)
 	{
-		printf("%Le", x);
+		printf("%1.Lf", x);
 		if (i < 97)
 		{
 			printf(", ");
