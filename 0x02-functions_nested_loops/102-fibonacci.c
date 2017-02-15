@@ -10,6 +10,7 @@ int main(void)
 {
 	int i = 0;
 	unsigned long x, y, z;
+
 	x = 1, y = 2;
 	while (i < 50)
 	{
