@@ -12,10 +12,10 @@ int main(void)
 	unsigned long x, y, z;
 
 	x = 1, y = 2;
-	while (i < 99)
+	while (i < 98)
 	{
 		printf("%lu", x);
-		if (i < 98)
+		if (i < 97)
 		{
 			printf(", ");
 		}

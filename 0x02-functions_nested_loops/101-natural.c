@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * main - add multiples of 3 & 5 below 1024
@@ -7,13 +8,14 @@
  */
 int main(void)
 {
-	_putchar('0' + 2);
-	_putchar('0' + 4);
-	_putchar('0' + 4);
-	_putchar('0' + 2);
-	_putchar('0' + 9);
-	_putchar('0' + 3);
-	_putchar('\n');
+	int i = 0, sum = 0;
 
+	while (i < 1024)
+	{
+		if (i % 3 == 0 || i % 5 == 0)
+			sum += i;
+		i++;
+	}
+	printf("%d\n", sum);
 	return (0);
 }
