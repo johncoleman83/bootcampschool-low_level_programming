@@ -12,10 +12,10 @@ int main(void)
 	long double x, y, z;
 
 	x = 1, y = 2;
-	while (i < 98)
+	while (i < 99)
 	{
-		printf("%1.0Lf", x);
-		if (i < 97)
+		printf("%1.Lf", x);
+		if (i < 98)
 		{
 			printf(", ");
 		}
