@@ -9,12 +9,12 @@
 int main(void)
 {
 	int i = 0;
-	unsigned long x, y, z;
+	long double x, y, z;
 
 	x = 1, y = 2;
 	while (i < 98)
 	{
-		printf("%lu", x);
+		printf("%Le", x);
 		if (i < 97)
 		{
 			printf(", ");
