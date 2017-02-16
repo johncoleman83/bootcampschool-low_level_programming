@@ -15,9 +15,7 @@ int main(void)
 	while (i < 90)
 	{
 		printf("%lu, %lu, ", n1, n2);
-		n1 += n2;
-		n2 += n1;
-		i += 2;
+		n1 += n2, n2 += n1, i += 2;
 	}
 	printf("%lu, %lu, ", n1, n2);
 	quotient1 = n1 / 100, quotient2 = n2 / 100;
