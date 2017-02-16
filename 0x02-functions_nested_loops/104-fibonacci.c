@@ -8,22 +8,30 @@
  */
 int main(void)
 {
-	int i = 0;
-	long double x, y, z;
+	int i = 0, remainder1, remainder2;
+	unsigned long n1, n2, quotient1, quotient2;
 
-	x = 1, y = 2;
-	while (i < 99)
+	n1 = 1, n2 = 2;
+	while (i < 90)
 	{
-		printf("%1.Lf", x);
-		if (i < 98)
-		{
-			printf(", ");
-		}
-		z = y;
-		y = x + y;
-		x = z;
+		printf("%lu, %lu, ", n1, n2);
+		n1 += n2;
+		n2 += n1;
+		i += 2;
+	}
+	printf("%lu, %lu, ", n1, n2);
+	quotient1 = n1 / 100, quotient2 = n2 / 100;
+	remainder1 = n2 % 100, remainder2 = n2 % 100;
+	while (i < 97)
+	{
+		n1 = quotient1 + quotient2, n2 = remainder1 + remainder2;
+		n2 > 99 ? n1++ : n2;
+		n2 = n2 % 100;
+		printf("%lu%c%lu", n1, n2 < 10 ? '0' : 0, n2);
+		i < 96 ? printf(", ") : printf("\n");
+		quotient1 = quotient2, quotient2 = n1;
+		remainder1 = remainder2, remainder2 = n2;
 		i++;
 	}
-	putchar('\n');
 	return (0);
 }
