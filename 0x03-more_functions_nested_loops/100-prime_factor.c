@@ -10,15 +10,16 @@ int is_factor(unsigned long);
  */
 int main(void)
 {
-	unsigned long i = 2;
+	unsigned long num = 612852475143, i = 2, check;
 
-	while (i <= 612852475143 / 2)
+	while (i <= num / 2)
 	{
-		if (612852475143 % i == 0)
+		if (num % i == 0)
 		{
-			if (is_prime(612852475143 / i) == 1)
+			check = num / i;
+			if (is_prime(check) == 1)
 			{
-				printf("%lu\n", i);
+				printf("%lu\n", check);
 				break;
 			}
 		}
