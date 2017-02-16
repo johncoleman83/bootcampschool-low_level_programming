@@ -1,7 +1,24 @@
 #include <stdio.h>
 #include <math.h>
-int is_prime(unsigned long);
-int is_factor(unsigned long);
+
+/**
+ * is_prime - checks if number is prime
+ * @x: input number to check
+ *
+ * Return: 1 prime, 0 not prime
+ */
+int is_prime(unsigned long x)
+{
+	unsigned long i = 2;
+
+	while (i <= sqrt(x))
+	{
+		if (x % i == 0)
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 /**
  * main - prints largest prime factor of 612852475143 followed by '\n'
@@ -26,22 +43,4 @@ int main(void)
 		i++;
 	}
 	return (0);
-}
-
-/**
- * is_prime - checks if number is prime
- *
- * Return: 1 prime, 0 not prime
- */
-int is_prime(unsigned long x)
-{
-	unsigned long i = 2;
-
-	while (i <= sqrt(x))
-	{
-		if (x % i == 0)
-			return 0;
-		i++;
-	}
-	return 1;
 }
