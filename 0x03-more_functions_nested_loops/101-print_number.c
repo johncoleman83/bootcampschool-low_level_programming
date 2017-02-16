@@ -14,6 +14,8 @@ void print_number(int n)
 	while (i * 10 <= num)
 	{
 		i *= 10;
+		if (i == 1000000000)
+			break;
 	}
 	if (n < 0)
 		_putchar('-');
