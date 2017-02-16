@@ -30,8 +30,7 @@ int main(void)
 		printf("%lu", n2);
 		printf(i < 95 ? ", " : "\n");
 		quotient1 = quotient2, quotient2 = n1;
-		rem1 = rem2, rem2 = n2;
-		i++;
+		rem1 = rem2, rem2 = n2, i++;
 	}
 	return (0);
 }
