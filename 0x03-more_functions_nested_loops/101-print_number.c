@@ -8,29 +8,31 @@
  */
 void print_number(int n)
 {
-	int nth, num = n, i = 1;
+	unsigned int nth, num, i = 1;
 
-	if (num < 0)
-		num *= -1;
+	num = n < 0 ? n * -1 : n;
 	if (num < 10)
 	{
 		if (n < 0)
 			_putchar('-');
 		_putchar('0' + num);
 	}
-	while (i <= num)
+	else
 	{
-		i *= 10;
-	}
-	i /= 10;
-	if (n < 0)
-		_putchar('-');
-	while (i > 1)
-	{
-		nth = num / i;
-		_putchar('0' + nth);
-		num -= nth * i;
+		while (i <= num)
+		{
+			i *= 10;
+		}
 		i /= 10;
+		if (n < 0)
+			_putchar('-');
+		while (i > 1)
+		{
+			nth = num / i;
+			_putchar('0' + nth);
+			num -= nth * i;
+			i /= 10;
+		}
+		_putchar('0' + num);
 	}
-	_putchar('0' + num);
 }
