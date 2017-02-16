@@ -22,8 +22,11 @@ void print_number(int n)
 		while (i <= num)
 		{
 			i *= 10;
+			if (i == 1000000000)
+				break;
 		}
-		i /= 10;
+		if (i < 1000000000)
+			i /= 10;
 		if (n < 0)
 			_putchar('-');
 		while (i > 1)
