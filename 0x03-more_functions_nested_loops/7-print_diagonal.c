@@ -10,8 +10,8 @@ void print_diagonal(int n)
 {
 	int i, n2 = n;
 
-	n <= 0 ? _putchar('\n') : n;
-
+	if (n < 1)
+		_putchar('\n');
 	for (; n2 > 0; n2--)
 	{
 		for (i = n - n2; i > 0; i--)

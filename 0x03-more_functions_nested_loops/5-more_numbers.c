@@ -13,7 +13,8 @@ void more_numbers(void)
 	{
 		for (j = 0; j < 15; j++)
 		{
-			j < 10 ? j : _putchar('1');
+			if (j > 9)
+				_putchar('1');
 			_putchar(j % 10 + 48);
 		}
 		_putchar('\n');
