@@ -27,8 +27,10 @@ int main(void)
 		n1 = quotient1 + quotient2, n2 = rem1 + rem2;
 		n2 > 99 ? n1++ : n2;
 		n2 = n2 % 100;
-		printf("%lu%c%lu", n1, n2 < 10 ? '0' : 0, n2);
-		i < 95 ? printf(", ") : printf("\n\n");
+		printf("%lu", n1);
+		printf(n2 < 10 ? "0" : "");
+		printf("%lu", n2);
+		printf(i < 95 ? ", " : "\n");
 		quotient1 = quotient2, quotient2 = n1;
 		rem1 = rem2, rem2 = n2;
 		i++;
