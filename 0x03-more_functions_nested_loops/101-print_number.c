@@ -11,31 +11,19 @@ void print_number(int n)
 	unsigned int nth, num, i = 1;
 
 	num = n < 0 ? n * -1 : n;
-	if (num < 10)
+	while (i * 10 <= num)
 	{
-		if (n < 0)
-			_putchar('-');
-		_putchar('0' + num);
+		i *= 10;
 	}
-	else
+	if (n < 0)
+		_putchar('-');
+	while (i > 1)
 	{
-		while (i <= num)
-		{
-			i *= 10;
-			if (i == 1000000000)
-				break;
-		}
-		if (i < 1000000000)
-			i /= 10;
-		if (n < 0)
-			_putchar('-');
-		while (i > 1)
-		{
-			nth = num / i;
-			_putchar('0' + nth);
-			num -= nth * i;
-			i /= 10;
-		}
-		_putchar('0' + num);
+		nth = num / i;
+		_putchar('0' + nth);
+		num -= nth * i;
+		i /= 10;
 	}
+	_putchar('0' + num);
+
 }
