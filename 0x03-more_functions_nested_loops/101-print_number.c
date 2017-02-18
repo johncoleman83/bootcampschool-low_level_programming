@@ -8,9 +8,10 @@
  */
 void print_number(int n)
 {
-	int copy, size = 1, nth, ones;
+	int copy, nth, size = 1, ones = n % 10;
 
-	ones = n % 10, n /= 10, copy = n;
+	n /= 10;
+	copy = n;
 	if (ones < 0)
 	{
 		ones *= -1, copy *= -1, n *= -1;
