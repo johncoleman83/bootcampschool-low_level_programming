@@ -11,14 +11,12 @@ void print_number(int n)
 	int copy, size = 1, nth, ones;
 
 	ones = n % 10, n /= 10, copy = n;
-	if (copy < 0)
+	if (ones < 0)
 	{
 		ones *= -1, copy *= -1, n *= -1;
 		_putchar('-');
 	}
-	if (copy == 0)
-		_putchar(ones + '0');
-	else
+	if (copy > 0)
 	{
 		while (copy / 10 != 0)
 		{
@@ -31,6 +29,6 @@ void print_number(int n)
 			n -= nth * size;
 			size /= 10;
 		}
-		_putchar('0' + ones);
 	}
+	_putchar('0' + ones);
 }
