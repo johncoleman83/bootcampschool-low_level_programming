@@ -34,6 +34,8 @@ int main(void)
 		if (num % i == 0)
 		{
 			check = num / i;
+			num /= i;
+			i--;
 			if (is_prime(check) == 1)
 			{
 				printf("%lu\n", check);
