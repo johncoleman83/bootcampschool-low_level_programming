@@ -1,5 +1,4 @@
 #include "holberton.h"
-#define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 
 /**
  * puts_half - prints half the string
@@ -9,9 +8,10 @@
  */
 void puts_half(char *str)
 {
-	int let, length = ARRAY_SIZE(str) + 1;
+	int c, length;
 
-	for (let = (length / 2) + (length % 2 == 0 ? 2 : 1); let <= length; let++)
-		_putchar(str[let]);
+	for (length = 0; str[length] != 0; length++);
+	for (c = length / 2 + (length % 2 == 0 ? 0 : 1); c <= length; c++)
+		_putchar(str[c]);
 	_putchar('\n');
 }
