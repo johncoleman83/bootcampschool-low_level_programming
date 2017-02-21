@@ -1,5 +1,4 @@
 #include "holberton.h"
-#define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 
 /**
  * puts2 - prints every other char from a string
@@ -9,9 +8,10 @@
  */
 void puts2(char *str)
 {
-	int length = ARRAY_SIZE(str), let;
+	int c;
 
-	for (let = 0; let <= length; let += 2)
-		_putchar(str[let]);
+	for (c = 0; str[c] != 0; c++)
+		if (c % 2 == 0)
+			_putchar(str[c]);
 	_putchar('\n');
 }
