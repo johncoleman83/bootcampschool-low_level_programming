@@ -8,11 +8,13 @@
  */
 void rev_string(char *s)
 {
-	int length = 0, c;
-	char copy[sizeof(s) + 1];
+	int length = 0, c = 0, temp;
 
-	for (c = 0; s[c] != 0; c++, length++)
-		copy[c] = s[c];
-	for (c = 0, length--; length >= 0; length--, c++)
-		s[c] = copy[length];
+	while (s[length + 1] != 0)
+		length++;
+	for (c = 0; c <= length / 2; c++)
+	{
+		temp = s[c], s[c] = s[length - c];
+		s[length - c] = temp;
+	}
 }
