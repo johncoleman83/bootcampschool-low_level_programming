@@ -9,11 +9,10 @@
 void rev_string(char *s)
 {
 	int length = 0, c;
-	char *copy;
+	char copy[sizeof(s) + 1];
 
 	for (c = 0; s[c] != 0; c++, length++)
-		*(copy + c) = s[c];
-
-	for (c = 0; length >= 0; length--, c++)
-		s[c] = *(copy + length);
+		copy[c] = s[c];
+	for (c = 0, length--; length >= 0; length--, c++)
+		s[c] = copy[length];
 }
