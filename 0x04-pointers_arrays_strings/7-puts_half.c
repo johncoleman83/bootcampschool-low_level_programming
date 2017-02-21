@@ -11,7 +11,7 @@ void puts_half(char *str)
 {
 	int let, length = ARRAY_SIZE(str) + 1;
 
-	for (let = length / 2 + 1; let <= length; let++)
+	for (let = (length / 2) + (length % 2 == 0 ? 2 : 1); let <= length; let++)
 		_putchar(str[let]);
 	_putchar('\n');
 }
