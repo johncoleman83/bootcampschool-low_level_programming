@@ -18,10 +18,7 @@ int _atoi(char *s)
 		{
 			start += c;
 			while (s[c] > 47 && s[c] < 58 && s[c] != 0)
-			{
-				digits++;
-				c++;
-			}
+				digits++, c++;
 			break;
 		}
 		c++;
