@@ -8,17 +8,17 @@
  */
 int main(void)
 {
-	char result[51];
+	char result[100];
 	int c, randomchar, randomlength = 0;
 
 	c = 0;
 	srand(time(0));
-	while (randomlength < 100)
+	while (randomlength < 300)
 	{
 		randomchar = rand() % 127;
 		if (randomchar > 32)
 			result[c] = randomchar, c++;
-		randomlength += rand() % 10;
+		randomlength += rand() % 10 == 9 ? (rand() % 10) * 9 : rand() % 10;
 	}
 	result[c] = '\0';
 	printf("%s", result);
