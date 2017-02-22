@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * puts_half - prints half the string
  * @str: input string

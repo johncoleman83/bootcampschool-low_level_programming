@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * _puts - prints string from pointer to string
  * @str: string to print

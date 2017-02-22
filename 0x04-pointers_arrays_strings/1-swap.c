@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * swap_int - don't swap horses when crossing a stream
  * @a: pointer to integer to swap

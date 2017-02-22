@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdio.h>
-
 /**
  * print_array - prints n number of indexes of an array
  * @a: input array
