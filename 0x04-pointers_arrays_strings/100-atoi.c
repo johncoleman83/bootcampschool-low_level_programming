@@ -37,6 +37,8 @@ int _atoi(char *s)
 			nth /= 10;
 			start++;
 		}
-	}
 	return (result);
+	}
+	else
+		return (0);
 }
