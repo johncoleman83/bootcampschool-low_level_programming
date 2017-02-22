@@ -8,7 +8,7 @@
  */
 int _atoi(char *s)
 {
-	int result = 0, nth = 1, c = 0, digits = 0, start = 0, sign = 1;
+	int result = 0, c = 0, sign = -1;
 
 	while (s[c] != '\0')
 	{
@@ -16,27 +16,11 @@ int _atoi(char *s)
 			sign *= -1;
 		if (s[c] > 47 && s[c] < 58)
 		{
-			start += c;
-			while (s[c] > 47 && s[c] < 58 && s[c] != '\0')
-				digits++, c++;
+			while (s[c] > 47 && s[c] < 58)
+				result = result * 10 - (s[c++] - 48);
 			break;
 		}
 		c++;
 	}
-	if (digits > 0)
-	{
-		c--;
-		for (digits -= 1; digits > 0; digits--)
-			nth *= 10;
-		while (start <= c)
-		{
-			if (sign == 1)
-				result += (s[start] - 48) * nth;
-			else
-				result -= (s[start] - 48) * nth;
-			nth /= 10;
-			start++;
-		}
-	}
-	return (result);
+	return (result * sign);
 }
