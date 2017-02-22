@@ -8,20 +8,18 @@
  */
 int main(void)
 {
-	char result[100];
-	int c, randomchar, randomlength = 0;
+	int randomchar, sum = 0;
 
-	c = 0;
 	srand(time(0));
-	while (randomlength < 300)
+	while (sum < 2772 - 127)
 	{
 		randomchar = rand() % 127;
 		if (randomchar > 32)
-			result[c] = randomchar, c++;
-		randomlength += rand() % 10 == 9 ? (rand() % 10) * 9 : rand() % 10;
+		{
+			putchar(randomchar);
+			sum += randomchar;
+		}
 	}
-	result[c] = '\0';
-	printf("%s", result);
-
+	putchar(2772 - sum);
 	return (0);
 }
