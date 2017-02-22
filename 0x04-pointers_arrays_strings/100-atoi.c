@@ -24,16 +24,19 @@ int _atoi(char *s)
 		}
 		c++;
 	}
-	for (digits -= 1; digits > 0; digits--)
-		nth *= 10;
-	while (start <= c)
+	if (digits > 0)
 	{
-		if (sign >= 0)
-			result += (s[start] - 48) * nth;
-		else
-			result -= (s[start] - 48) * nth;
-		nth /= 10;
-		start++;
+		for (digits -= 1; digits > 0; digits--)
+			nth *= 10;
+		while (start <= c)
+		{
+			if (sign >= 0)
+				result += (s[start] - 48) * nth;
+			else
+				result -= (s[start] - 48) * nth;
+			nth /= 10;
+			start++;
+		}
 	}
 	return (result);
 }
