@@ -11,8 +11,8 @@
 void print_array(int *a, int n)
 {
 	int c;
-	char s[] = ", ", last[] = "\n";
 
 	for (c = 0; c < n; c++)
-		printf("%d%s", a[c], c < n - 1 ? s : last);
+		printf("%d%s", a[c], c < n - 1 ? ", " : "");
+	printf("\n");
 }
