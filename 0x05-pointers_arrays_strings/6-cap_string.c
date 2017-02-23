@@ -20,9 +20,6 @@ char *cap_string(char *s)
 		case '(': case ')': case '{': case '}':
 			if (s[i + 1] > 96 && s[i + 1] < 123)
 				s[i + 1] -= 32;
-			break;
-		default:
-			break;
 		}
 	}
 	return (s);
