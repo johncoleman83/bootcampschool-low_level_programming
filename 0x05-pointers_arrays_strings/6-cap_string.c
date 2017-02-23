@@ -12,8 +12,19 @@ char *cap_string(char *s)
 	if (s[0] > 96 && s[0] < 123)
 		s[0] -= 32;
 	for (i = 0; s[i] != '\0'; i++)
-		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+	{
+		switch (s[i])
+		{
+		case ' ': case '\n': case '\t': case ',':
+		case ';':	case '.': case '!': case '?':
+		case '"': case '(': case ')': case '{':
+		case '}':
 			if (s[i + 1] > 96 && s[i + 1] < 123)
 				s[i + 1] -= 32;
+			break;
+		default:
+			break;
+		}
+	}
 	return (s);
 }
