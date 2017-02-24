@@ -20,9 +20,7 @@ void print_number(int n)
 	if (copy > 0)
 	{
 		while (copy / 10 != 0)
-		{
 			copy /= 10, size *= 10;
-		}
 		while (size > 0)
 		{
 			nth = n / size;
