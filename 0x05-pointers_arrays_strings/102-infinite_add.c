@@ -25,10 +25,14 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		return (0);
 	for (j = 0, i = len1 - 1; j < len1; j++, i--)
 		n1c[j] = n1[i];
+	n1c[j] = '\0';
 	for (j = 0, i = len2 - 1; j < len2; j++, i--)
 		n2c[j] = n2[i];
-	while (num < size_r && (n1c[num1] != '\0' && n2c[num2] != '\0'))
+	n2c[j] = '\0';
+	while (num < size_r - 1)
 	{
+		if ((n1c[num1] == '\0' && n2c[num2] == '\0') && sum == 0)
+			break;
 		sum1 = num1 < len1 ? n1c[num1] - '0' : 0;
 		sum2 = num2 < len2 ? n2c[num2] - '0' : 0;
 		sum += (sum1 + sum2);
@@ -42,6 +46,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	if (sum != 0)
 		return (0);
+	r[num] = '\0';
 	for (i = num - 1, j = 0; j < num / 2; j++, i--)
 		temp = r[j], r[j] = r[i], r[i] = temp;
 	return (r);
