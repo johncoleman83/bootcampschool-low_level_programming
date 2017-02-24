@@ -4,7 +4,7 @@
  * @n1: first string of integers
  * @n2: second string of ints
  * @r: result string
- * size_r: size of result string
+ * @size_r: size of result string
  *
  * Return: void
  */
