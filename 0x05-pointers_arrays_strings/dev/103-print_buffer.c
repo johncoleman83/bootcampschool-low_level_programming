@@ -32,7 +32,9 @@ void print_buffer(char *b, int size)
 				count++;
 				i++;
 			}
-		printf("\n");
+			if (j < size - 10)
+				printf("\n");
 		j += 10;
 	}
+	printf("\n");
 }
