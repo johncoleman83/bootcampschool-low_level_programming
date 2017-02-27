@@ -18,11 +18,13 @@ void print_buffer(char *b, int size)
 			while (count < 10)
 			{
 				if (i >= size)
-					printf("     ");
+					printf("  ");
 				else
-					printf("%02x%02x ", *(b + i), *(b + i + 1));
-				i += 2;
-				count += 2;
+					printf("%02x", *(b + i));
+				if (i % 2 != 0)
+					printf(" ");
+				i++;
+				count++;
 			}
 			i -= 10;
 			count = 0;
