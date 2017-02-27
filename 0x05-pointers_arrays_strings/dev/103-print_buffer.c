@@ -13,7 +13,7 @@ void print_buffer(char *b, int size)
 
 	while (j < size)
 	{
-		printf("%p ", b + j);
+		printf("000000%02x ", (int)((unsigned long)(b + j) % 100));
 		count = 0;
 			while (count < 10)
 			{
