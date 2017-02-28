@@ -1,18 +1,18 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * print_diagsums - input
- * @s: arg
- * @size: arg
+ * @a: input array
+ * @size: size
  * Return: void
  */
 void print_diagsums(int *a, int size)
 {
-	unsigned int i;
+	int i, j, sum1 = 0, sum2 = 0;
 
-	while (i < n)
-	{
-		*(s + i) = b;
-		i++;
-	}
-	return (s);
+	for (i = 0, j = 0; i < size; i++, j += size)
+		sum1 += a[j + i];
+	for (i = 0, j = size; i < size; i++, j += size)
+		sum2 += a[j - 1 - i];
+	printf("%d, %d\n", sum1, sum2);
 }
