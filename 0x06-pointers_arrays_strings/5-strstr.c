@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdlib.h>
 /**
  * _strstr - returns pointer to first char of matching substring
  * @haystack: string to find substring in
