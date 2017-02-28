@@ -7,7 +7,7 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	char i, j, start;
+	int i, j, start;
 
 	for (i = 0; haystack[i] != '\0'; i++)
 		if (haystack[i] == needle[0])
