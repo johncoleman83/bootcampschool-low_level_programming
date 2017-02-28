@@ -15,7 +15,7 @@ int main(void)
     t = _strstr(s, f);
 	printf("%s\n", t);
 	s = "hello, world";
-	f = "olle";
+	f = "ol";
 	t = _strstr(s, f);
     printf("%s\n", t);
     return (0);
