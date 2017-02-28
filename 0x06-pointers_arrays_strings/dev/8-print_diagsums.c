@@ -7,12 +7,13 @@
  */
 void print_diagsums(int *a, int size)
 {
-	unsigned int i;
+	int j = 1;
 
-	while (i < n)
+	while (a[0][j - 1] != 0)
 	{
-		*(s + i) = b;
-		i++;
+		_putchar(a[0][j - 1]);
+		if (j > 1 && j % 8 == 0)
+			_putchar('\n');
+		j++;
 	}
-	return (s);
 }
