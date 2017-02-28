@@ -18,5 +18,5 @@ char *_strstr(char *haystack, char *needle)
 					break;
 				else if (j == n_len - 1)
 					goto exit;
-exit: return (haystack[i] == '\0' ? '\0' : (haystack + i));
+exit: return (haystack + i);
 }
