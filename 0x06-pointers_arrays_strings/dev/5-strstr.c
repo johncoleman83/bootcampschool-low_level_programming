@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdlib.h>
 /**
  * _strstr - returns pointer to first char of matching substring
  * @haystack: string to find substring in
@@ -8,17 +7,18 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	char *i, *j;
+	char *i;
+	char *j;
 
 	while (haystack != '\0')
 	{
 		i = haystack;
 		j = needle;
-		while (*i == *j && *i != '\0' && *j != '\0')
-			i++, j++;
+		while (*haystack == *j && *haystack != '\0' && *j != '\0')
+			haystack++, j++;
 		if (*j == '\0')
-			return (haystack);
-		haystack++;
+			return (i);
+		haystack = i + 1;
 	}
 	return ('\0');
 }
