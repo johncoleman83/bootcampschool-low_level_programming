@@ -34,7 +34,7 @@ int is_palindrome(char *s)
 {
 	int len = string_length(s);
 
-	if (len < 1)
-		return (1);
+	if (len == 0)
+		return (0);
 	return (check_letters(s, 0, --len));
 }
