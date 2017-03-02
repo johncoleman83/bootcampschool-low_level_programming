@@ -18,5 +18,13 @@ int main(void)
     printf("%d\n", r);
     r = is_palindrome("step on no pets");
     printf("%d\n", r);
+    r = is_palindrome("");
+    printf("%d\n", r);
+    r = is_palindrome("r");
+    printf("%d\n", r);
+    r = is_palindrome("rd");
+    printf("%d\n", r);
+	r = is_palindrome("dad");
+    printf("%d\n", r);
     return (0);
 }

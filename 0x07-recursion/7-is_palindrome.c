@@ -20,7 +20,7 @@ int string_length(char *st)
 int check_letters(char *str, int i, int j)
 {
 	if ((j - i) < 2)
-		return (1);
+		return (str[i] == str[j] ? 1 : 0);
 	if (str[i] != str[j])
 		return (0);
 	return (check_letters(str, ++i, --j));
@@ -35,6 +35,6 @@ int is_palindrome(char *s)
 	int len = string_length(s);
 
 	if (len < 2)
-		return (0);
+		return (1);
 	return (check_letters(s, 0, --len));
 }
