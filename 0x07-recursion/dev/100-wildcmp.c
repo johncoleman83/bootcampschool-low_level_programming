@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * addres_of_end - returns pointer to null terminator
+ * address_of_end - returns pointer to null terminator
  * @s: input string
  * Return: pointer to Null terminator char of string
  */
@@ -11,9 +11,8 @@ char *address_of_end(char *s)
 	return (address_of_end(++s));
 }
 /**
- * regess - regresses from end of string to last matching char
+ * regress - regresses from end of string to last matching char
  * @s: input string
- * @i: index
  * @c: character to match
  * Return: index of match
  */
@@ -22,6 +21,17 @@ char *regress(char *s, char c)
 	if (*s == c)
 		return (s);
 	return (regress(s - 1, c));
+}
+/**
+ * last_star - regresses from end of string to last matching char
+ * @s: input string
+ * Return: index of match
+ */
+char *last_star(char *s)
+{
+	if (*s != '\0')
+		return (s);
+	return (last_star(s + 1));
 }
 /**
  * check_equality - finds address of first non equal characters
