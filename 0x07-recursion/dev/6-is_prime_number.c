@@ -11,6 +11,8 @@ int is_prime(int a, int b)
 		return (0);
 	if (a == b)
 		return (1);
+	if (b * b > a)
+		return (1);
 	return (a % b == 0 ? 0 : (is_prime(a, b + 1)));
 }
 /**
