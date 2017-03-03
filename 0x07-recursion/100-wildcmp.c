@@ -1,19 +1,15 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  * move_pointer - move pointer to character in 'd' direction
  * @s: input string
  * @c: character to match
- * @d: direction, forward 1, reverse -1
  * Return: pointer to match
  */
-char *move_pointer(char *s, char c, int d)
+char *move_pointer(char *s, char c)
 {
-	if (d == 1 && *s == '\0')
-		return (s);
 	if (*s == c)
 		return (s);
-	return (d == 1 ? move_pointer(++s, c, d) : move_pointer(--s, c, d));
+	return (move_pointer(++s, c));
 }
 /**
  * parse_star - parses string until match is not found
@@ -27,6 +23,21 @@ char *parse_star(char *s)
 	return (parse_star(++s));
 }
 /**
+ * regress - regresses from end of string to last matching char
+ * @s1: stopping point
+ * @s2: input string
+ * @c: character to match
+ * Return: index of match
+ */
+char *regress(char *s1, char *s2, char c)
+{
+	if (s2 == s1)
+		return (s2);
+	if (*s2 == c)
+		return (s2);
+	return (regress(s1, s2 - 1, c));
+}
+/**
  * wildcmp - checks is strings could be identical considering * wildcard
  * @s1: first string
  * @s2: second string
@@ -37,7 +48,7 @@ int wildcmp(char *s1, char *s2)
 	char post_l;
 	char *an_address = s1;
 
-	an_address = move_pointer(an_address, '\0', 1);
+	an_address = move_pointer(an_address, '\0');
 	if (*s1 == '\0' && *s2 == '\0')
 		return (1);
 	if (*s2 == '*')
@@ -48,7 +59,7 @@ int wildcmp(char *s1, char *s2)
 		if (*s1 == '\0')
 			return (0);
 		post_l = *s2;
-		an_address = move_pointer(an_address, post_l, -1);
+		an_address = regress(s1, an_address, post_l);
 		if (wildcmp(an_address, s2) == 1)
 			return (1);
 	}
