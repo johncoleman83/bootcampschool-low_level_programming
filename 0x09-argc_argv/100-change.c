@@ -8,13 +8,14 @@
  */
 int main(int a, char **b)
 {
+	int sum, coins = 0;
+
 	if (a != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	int sum = atoi(*(b + 1)), coins = 0;
-
+	sum = atoi(*(b + 1));
 	while (sum >= 25)
 		sum -= 25, coins++;
 	while (sum >= 10)
