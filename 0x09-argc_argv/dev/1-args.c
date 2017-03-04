@@ -7,7 +7,7 @@
  */
 int main(int a, char **b)
 {
-	if (b || !b)
-		printf("%d\n", a - 1);
+	(void)b;
+	printf("%d\n", a - 1);
 	return (0);
 }
