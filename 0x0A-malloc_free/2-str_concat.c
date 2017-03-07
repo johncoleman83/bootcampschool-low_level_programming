@@ -12,6 +12,8 @@ char *str_concat(char *s1, char *s2)
 	char *pstr;
 	unsigned int i = 0, j = 0, k = 0, len;
 
+	if (s1 == 0 || s2 == 0)
+		return (0);
 	while (s1[i] != 0)
 		i++;
 	while (s2[j] != 0)
