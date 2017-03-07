@@ -12,11 +12,6 @@ char *str_concat(char *s1, char *s2)
 	char *pstr;
 	unsigned int len1 = 0, len2 = 0, i, j;
 
-	if (s1 == 0)
-		s1 = "";
-	if (s2 == 0)
-		s2 = "";
-
 	while (s1[len1] != 0)
 		len1++;
 	while (s2[len2] != 0)
