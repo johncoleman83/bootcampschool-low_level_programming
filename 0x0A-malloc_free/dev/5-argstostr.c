@@ -19,7 +19,7 @@ char *argstostr(int ac, char **av)
 		j = 0;
 		while (av[i][j] != 0)
 			len++, j++;
-		i++;
+		len++, i++;
 	}
 	len++;
 	str = (char *)malloc(sizeof(char) * len);
@@ -36,6 +36,6 @@ char *argstostr(int ac, char **av)
 			str[k] = av[i][j], j++, k++;
 		str[k] = '\n', k++, i++;
 	}
-	str[k] = 0, i = 0;
+	str[k] = 0;
 	return (str);
 }
