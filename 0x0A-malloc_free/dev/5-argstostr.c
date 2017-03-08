@@ -13,10 +13,7 @@ char *argstostr(int ac, char **av)
 	int len = 0, i = 0, j, k = 0;
 
 	if (av == 0)
-	{
-		free(av);
 		return (0);
-	}
 	while (i < ac)
 	{
 		j = 0;
@@ -39,6 +36,6 @@ char *argstostr(int ac, char **av)
 			str[k] = av[i][j], j++, k++;
 		str[k] = '\n', k++, i++;
 	}
-	str[k] = 0;
+	str[k] = 0, i = 0;
 	return (str);
 }
