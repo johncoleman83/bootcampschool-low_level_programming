@@ -21,10 +21,11 @@ char **strtow(char *str)
 				i++;
 			words++;
 		}
+		i++;
 	}
 	if (i > 0)
 		words++;
-	newstr = malloc(words * sizeof(*newstr));
+	newstr = malloc((words + 1) * sizeof(*newstr));
 	if (newstr == 0)
 	{
 		free(newstr);
@@ -44,7 +45,7 @@ char **strtow(char *str)
 		}
 		word_len++, i++;
 	}
-	newstr[j] = malloc(sizeof(char) * word_len);
+	newstr[j] = malloc(sizeof(char) * (word_len + 1));
 	if (newstr[j] == 0)
 		return (0);
 	i = 0, word_len = 0;
@@ -61,5 +62,6 @@ char **strtow(char *str)
 			newstr[j][word_len] = str[i];
 		word_len++, i++;
 	}
+	newstr[j][word_len] = 0;
 	return (newstr);
 }
