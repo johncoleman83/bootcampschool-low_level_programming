@@ -15,13 +15,15 @@ char **strtow(char *str)
 		return (NULL);
 	while (str[i] != 0)
 	{
-		if (str[i] == ' ')
+		if (str[i] == ' ' && i != 0)
 			words++;
 		i++;
 	}
-	if (i > 0)
-		words += 2;
-	newstr = malloc((words) * sizeof(char *));
+	if (i > 0 && str[i] != ' ')
+		words++;
+	else
+		return (NULL);
+	newstr = malloc((words + 1) * sizeof(char *));
 	if (newstr == 0)
 	{
 		free(newstr);
