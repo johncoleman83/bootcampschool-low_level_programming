@@ -3,65 +3,58 @@
 #include "holberton.h"
 /**
  * strtow - splits a string into words
- * @str: input string to splie
+ * @str: input string to split
  * Return: pointer to new string
  */
 char **strtow(char *str)
 {
 	char **newstr;
-	int words = 0, i = 0, j = 0, word_len;
+	int words = 0, i = 0, j = 0, word_len = 1;
 
 	if (str == 0)
-		return (0);
+		return (NULL);
 	while (str[i] != 0)
 	{
 		if (str[i] == ' ')
-		{
-			while (str[i] == ' ')
-				i++;
-			i--, words++;
-		}
+			words++;
 		i++;
 	}
 	if (i > 0)
-		words++;
-	newstr = malloc((words) * sizeof(*newstr));
+		words += 2;
+	newstr = malloc((words) * sizeof(char *));
 	if (newstr == 0)
 	{
 		free(newstr);
-		return (0);
+		return (NULL);
 	}
 	i = 0;
 	while (str[i] != 0)
 	{
 		if (str[i] == ' ')
 		{
-			newstr[j] = malloc(sizeof(char) * word_len);
+			newstr[j] = malloc(sizeof(char *) * word_len);
 			if (newstr[j] == 0)
-				return (0);
-			while (str[i] == ' ')
-				i++;
-			i--, j++, word_len = 0 - 1;
+				return (NULL);
+			j++, word_len = 0;
 		}
 		word_len++, i++;
 	}
-	newstr[j] = malloc(sizeof(char) * (word_len + 1));
+	newstr[j] = malloc(sizeof(char) * (word_len));
 	if (newstr[j] == 0)
-		return (0);
-	i = 0, word_len = 0;
+		return (NULL);
+	i = 0, word_len = 0, j = 0;
 	while (str[i] != 0)
 	{
 		if (str[i] == ' ')
 		{
 			newstr[j][word_len] = 0;
-			while (str[i] == ' ')
-				i++;
-			i--, j++, word_len = 0 - 1;
+			j++, word_len = -1;
 		}
 		else
 			newstr[j][word_len] = str[i];
 		word_len++, i++;
 	}
 	newstr[j][word_len] = 0;
+	newstr[++j] = NULL;
 	return (newstr);
 }
