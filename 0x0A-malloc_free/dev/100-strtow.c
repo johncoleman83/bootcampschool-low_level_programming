@@ -81,7 +81,7 @@ int word_count(char *str)
 	}
 	if (words == 0)
 		return (0);
-	return (++words);
+	return (words);
 }
 /**
  * strtow - splits a string into words
@@ -96,10 +96,10 @@ char **strtow(char *str)
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	words = word_count(str);
-	if (words == 0)
+	if (!words)
 		return (NULL);
 	newstr = malloc((words + 1) * sizeof(char *));
-	if (newstr == 0)
+	if (!newstr)
 		return (NULL);
 	if (!mallocmem(newstr, str))
 	{
