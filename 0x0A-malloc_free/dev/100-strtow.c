@@ -18,7 +18,7 @@ char **strtow(char *str)
 			words++;
 		i++;
 	}
-	if (i < 1)
+	if (i < 2)
 		return (NULL);
 	words++;
 	newstr = malloc((words + 1) * sizeof(char *));
