@@ -10,6 +10,7 @@
 void freemem(char **newstr, int words)
 {
 	int i = 0;
+
 	while (i < words)
 	{
 		free(newstr[i]);
