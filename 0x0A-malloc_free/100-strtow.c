@@ -44,7 +44,7 @@ int mallocmem(char **newstr, char *str)
 {
 	int i = 0, j = 0, word_len = 1;
 
-	while (str[i] != 0)
+	while (str[i] != '\0')
 	{
 		if (str[i] != ' ')
 		{
@@ -72,7 +72,7 @@ char **strtow(char *str)
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
-	while (str[i] != 0)
+	while (str[i] != '\0')
 	{
 		if (str[i] != ' ')
 		{
