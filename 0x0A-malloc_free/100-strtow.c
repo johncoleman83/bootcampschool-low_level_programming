@@ -2,24 +2,6 @@
 #include <stdlib.h>
 #include "holberton.h"
 /**
- * freemem - frees memory
- * @newstr: new string
- * @words: # of "rows" in 2D array
- * Return: void
- */
-void freemem(char **newstr, int words)
-{
-	int i = 0;
-
-	while (i < words)
-	{
-		free(newstr[i]);
-		i++;
-	}
-	free(newstr[i]);
-	free(newstr);
-}
-/**
  * strncat_mod - concatenates string with n bytes from another string
  * @dest: destination string
  * @src: source string
@@ -107,10 +89,7 @@ char **strtow(char *str)
 	if (!newstr)
 		return (NULL);
 	if (!mallocmem(newstr, str, str_len))
-	{
-		freemem(newstr, words);
 		return (NULL);
-	}
 	while (i < str_len)
 	{
 		if (str[i] != ' ')
