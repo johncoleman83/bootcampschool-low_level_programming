@@ -84,7 +84,7 @@ char **strtow(char *str)
 		return (NULL);
 	newstr = malloc((words + 1) * sizeof(char *));
 	mallocmem(newstr, str, str_len);
-   	while (i < str_len)
+	while (i < str_len)
 	{
 		if (str[i] != ' ')
 		{
