@@ -50,11 +50,11 @@ int mallocmem(char **newstr, char *str)
 		{
 			while (str[i] != ' ' && str[i] != '\0')
 				i++, word_len++;
-			newstr[j] = malloc(sizeof(char *) * word_len);
+			newstr[j] = malloc(sizeof(char) * word_len);
 			if (newstr[j] == 0)
 				return (0);
 			newstr[j][word_len] = '\0';
-			j++, word_len = 0;
+			j++, word_len = 1;
 		}
 		i++;
 	}
