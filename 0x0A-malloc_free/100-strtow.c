@@ -22,9 +22,9 @@ int strncat_mod(char *dest, char *src, int i, int str_len)
  * @newstr: new string
  * @str: input string
  * @str_len: string length
- * Return: 0 on failure, 1 success
+ * Return: void
  */
-int mallocmem(char **newstr, char *str, int str_len)
+void mallocmem(char **newstr, char *str, int str_len)
 {
 	int i = 0, j = 0, word_len = 1;
 
@@ -35,14 +35,11 @@ int mallocmem(char **newstr, char *str, int str_len)
 			while (str[i] != ' ' && i < str_len)
 				i++, word_len++;
 			newstr[j] = malloc(sizeof(char) * word_len);
-			if (newstr[j] == 0)
-				return (0);
 			newstr[j][word_len] = '\0';
 			j++, word_len = 1;
 		}
 		i++;
 	}
-	return (1);
 }
 /**
  * word_count - counts words in input string
@@ -86,11 +83,8 @@ char **strtow(char *str)
 	if (!words)
 		return (NULL);
 	newstr = malloc((words + 1) * sizeof(char *));
-	if (!newstr)
-		return (NULL);
-	if (!mallocmem(newstr, str, str_len))
-		return (NULL);
-	while (i < str_len)
+	mallocmem(newstr, str, str_len);
+   	while (i < str_len)
 	{
 		if (str[i] != ' ')
 		{
