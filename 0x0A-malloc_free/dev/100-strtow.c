@@ -61,17 +61,14 @@ int mallocmem(char **newstr, char *str)
 	return (1);
 }
 /**
- * strtow - splits a string into words
- * @str: input string to split
- * Return: pointer to new string
+ * word_count - counts words in input string
+ * @str: input string
+ * Return: 0 on failure, words on success
  */
-char **strtow(char *str)
+int word_count(char *str)
 {
-	char **newstr;
-	int words = 0, i = 0, j;
+	int i = 0, words = 0;
 
-	if (str == NULL || str[0] == '\0')
-		return (NULL);
 	while (str[i] != '\0')
 	{
 		if (str[i] != ' ')
@@ -83,8 +80,24 @@ char **strtow(char *str)
 		i++;
 	}
 	if (words == 0)
+		return (0);
+	return (++words);
+}
+/**
+ * strtow - splits a string into words
+ * @str: input string to split
+ * Return: pointer to new string
+ */
+char **strtow(char *str)
+{
+	char **newstr;
+	int i = 0, j = 0, words;
+
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
-	words++;
+	words = word_count(str);
+	if (words == 0)
+		return (NULL);
 	newstr = malloc((words + 1) * sizeof(char *));
 	if (newstr == 0)
 		return (NULL);
@@ -94,7 +107,6 @@ char **strtow(char *str)
 		return (NULL);
 	}
 	newstr[words + 1] = NULL;
-	i = 0, j = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] != ' ')
