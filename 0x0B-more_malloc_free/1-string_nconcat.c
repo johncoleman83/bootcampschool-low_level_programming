@@ -21,12 +21,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len2++;
 	if (len1 == 0 && (len2 == 0 || n == 0))
 		return (NULL);
-	new_str = malloc(sizeof(char) * (len1 + (len2 <= n ? len2 : n) + 1));
+	if (n >= len2)
+		n = len2;
+	new_str = malloc(len1 + n + 1);
 	if (new_str == NULL)
 		return (NULL);
 	for (i = 0; i < len1; i++)
 		new_str[i] = s1[i];
-	for (j = 0; j < (len2 <= n ? len2 : n); i++, j++)
+	for (j = 0; j < n; i++, j++)
 		new_str[i] = s2[j];
 	new_str[i] = '\0';
 	return (new_str);
