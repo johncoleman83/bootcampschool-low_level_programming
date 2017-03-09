@@ -42,15 +42,15 @@ char **strtow(char *str)
 	char **newstr;
 	int words = 0, i = 0, j, let;
 
-	if (str == 0)
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	while (str[i] != 0)
 	{
-		if (str[i] == ' ' && str[i + 1] != 0)
+		if (str[i] == ' ' && str[i + 1] != 0 && i != 0)
 			words++;
 		i++;
 	}
-	if (i < 2)
+	if (words == 0)
 		return (NULL);
 	words++;
 	newstr = malloc((words + 1) * sizeof(char *));
