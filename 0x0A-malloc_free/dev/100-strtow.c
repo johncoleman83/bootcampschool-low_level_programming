@@ -2,7 +2,40 @@
 #include <stdlib.h>
 #include "holberton.h"
 /**
- * mallocmem - allocates memory for me
+ * freemem - frees memory
+ * @newstr: new string
+ * @words: # of "rows" in 2D array
+ * Return: void
+ */
+void freemem(char **newstr, int words)
+{
+	int i = 0;
+
+	while (i < words)
+	{
+		free(newstr[i]);
+		i++;
+	}
+	free(newstr[i]);
+	free(newstr);
+}
+/**
+ * strncat_mod - concatenates string with n bytes from another string
+ * @dest: destination string
+ * @src: source string
+ * @i: index of beginning char from source string to copy
+ * Return: next index to check of source string
+ */
+int strncat_mod(char *dest, char *src, int i)
+{
+	int j;
+
+	for (j = 0; src[i] != ' ' && src[i] != '\0'; i++, j++)
+		dest[j] = src[i];
+	return (i);
+}
+/**
+ * mallocmem - allocates memory for output array and sets NULL at string end
  * @newstr: new string
  * @str: input string
  * Return: 0 on failure, 1 success
@@ -13,22 +46,17 @@ int mallocmem(char **newstr, char *str)
 
 	while (str[i] != 0)
 	{
-		if (str[i] == ' ' && i != 0)
+		if (str[i] != ' ')
 		{
+			while (str[i] != ' ' && str[i] != '\0')
+				i++, word_len++;
 			newstr[j] = malloc(sizeof(char *) * word_len);
 			if (newstr[j] == 0)
 				return (0);
+			newstr[j][word_len] = '\0';
 			j++, word_len = 0;
 		}
-		if (str[i] == ' ' && i == 0)
-			word_len--;
-		word_len++, i++;
-	}
-	if (str[i - 1] != ' ')
-	{
-		newstr[j] = malloc(sizeof(char) * (word_len));
-		if (newstr[j] == 0)
-			return (0);
+		i++;
 	}
 	return (1);
 }
@@ -40,14 +68,18 @@ int mallocmem(char **newstr, char *str)
 char **strtow(char *str)
 {
 	char **newstr;
-	int words = 0, i = 0, j, let;
+	int words = 0, i = 0, j;
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	while (str[i] != 0)
 	{
-		if (str[i] == ' ' && str[i + 1] != 0 && i != 0)
+		if (str[i] != ' ')
+		{
+			while (str[i] != ' ' && str[i] != '\0')
+				i++;
 			words++;
+		}
 		i++;
 	}
 	if (words == 0)
@@ -56,26 +88,21 @@ char **strtow(char *str)
 	newstr = malloc((words + 1) * sizeof(char *));
 	if (newstr == 0)
 		return (NULL);
-	i = 0;
 	if (!mallocmem(newstr, str))
-		return (NULL);
-	i = 0, let = 0, j = 0;
-	while (str[i] != 0)
 	{
-		if (str[i] == ' ' && i != 0)
-		{
-			newstr[j][let] = 0;
-			if (str[i + 1] != 0)
-				j++, let = -1;
-		}
-		else
-			newstr[j][let] = str[i];
-		if (str[i] == ' ' && i == 0)
-			let--;
-		let++, i++;
+		freemem(newstr, words);
+		return (NULL);
 	}
-	if (str[i - 1] != ' ')
-		newstr[j][let] = 0;
-	newstr[++j] = NULL;
+	newstr[words + 1] = NULL;
+	i = 0, j = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] != ' ')
+		{
+			i = strncat_mod(newstr[j], str, i);
+			j++, i--;
+		}
+		i++;
+	}
 	return (newstr);
 }
