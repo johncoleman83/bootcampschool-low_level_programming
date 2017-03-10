@@ -64,7 +64,6 @@ void multiply(int *small, int len_s, int *big, int len_b, int **mul_result)
  * add - adds array of strings together
  * @mul_result: pointer to 2D int array with numbers to add
  * @nums: rows of array
- * @digits: columns of array
  * @len_r: length of result array
  * Return: void
  */
