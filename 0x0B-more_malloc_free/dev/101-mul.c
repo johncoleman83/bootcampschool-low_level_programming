@@ -57,6 +57,7 @@ void multiply(int *small, int len_s, int *big, int len_b, int **mul_result)
 			mul_result[nums][digits] += product % 10;
 			digits--, b--, carry = product / 10;
 		}
+		mul_result[nums][digits] += carry;
 		nums++, i++, s--;
 	}
 }
