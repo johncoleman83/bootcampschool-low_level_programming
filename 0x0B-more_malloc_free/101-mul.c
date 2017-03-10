@@ -34,24 +34,6 @@ int str_to_arr(char *str, int *arr)
 	return (1);
 }
 /**
- * mallokmem - mallocs for array of multiplication results
- * @mul_result: pointer to array of strings
- * @nums: rows
- * @digits: columns
- * Return: void
- */
-void malmen(int **mul_result, int nums, int digits)
-{
-	int i, j;
-
-	mul_result = malloc(sizeof(int) * (nums));
-	for (i = 0; i < nums; i++)
-		mul_result[i] = malloc(sizeof(int) * (digits));
-	for (i = 0; i < nums; i++)
-		for (j = 0; j < digits; j++)
-			mul_result[i][j] = 0;
-}
-/**
  * multiply - multiplies 2 #'s, prints result, must be 2 #'s
  * @small: smaller factor
  * @len_s: length of small number
@@ -101,7 +83,8 @@ void add(int **mul_result, int nums, int digits, int *sum_result, int len_r)
 	sum_result[len_r] = carry;
 	i = 0;
 	while (i < k)
-		printf("%d", sum_result[i++]);
+		_putchar(sum_result[i++] + '0');
+	_putchar('\n');
 }
 /**
  * main - multiply 2 input #'s of large lengths and print result or print Error
@@ -111,7 +94,7 @@ void add(int **mul_result, int nums, int digits, int *sum_result, int len_r)
  */
 int main(int argc, char **argv)
 {
-	int len_s, len_b, temp, len_r;
+	int len_s, len_b, temp, len_r, i, j;
 	int **mul_result, *sum_result, *small, *big;
 
 	if (argc != 3)
@@ -138,7 +121,12 @@ int main(int argc, char **argv)
 		if (!str_to_arr(argv[2], small) || !str_to_arr(argv[1], big))
 			exit(98);
 	}
-	malmem(mul_result, len_s, len_r);
+	mul_result = malloc(sizeof(int) * (len_s));
+	for (i = 0; i < len_s; i++)
+		mul_result[i] = malloc(sizeof(int) * (len_r));
+	for (i = 0; i < len_s; i++)
+		for (j = 0; j < len_r; j++)
+			mul_result[i][j] = 0;
 	multiply(small, len_s, big, len_b, mul_result);
 	add(mul_result, len_s, len_b, sum_result, len_r);
 	return (0);
