@@ -62,12 +62,16 @@ void multiply(int *small, int len_s, int *big, int len_b, int **mul_result)
 /**
  * add - adds array of strings together
  * @mul_result: pointer to 2D int array with numbers to add
+ * @nums: rows of array
+ * @digits: columns of array
+ * @len_r: length of result array
  * Return: void
  */
-void add(int **mul_result, int nums, int digits, int *sum_result, int len_r)
+void add(int **mul_result, int nums, int digits, int len_r)
 {
-	int i = digits, j, k = len_r, sum, carry = 0;
+	int i = digits, j, k = len_r, sum, carry = 0, *add_result;
 
+	sum_result = malloc(sizeof(int) * len_r);
 	len_r--;
 	while (i >= 0)
 	{
@@ -95,7 +99,7 @@ void add(int **mul_result, int nums, int digits, int *sum_result, int len_r)
 int main(int argc, char **argv)
 {
 	int len_s, len_b, temp, len_r, i, j;
-	int **mul_result, *sum_result, *small, *big;
+	int **mul_result, *small, *big;
 
 	if (argc != 3)
 	{
@@ -105,12 +109,11 @@ int main(int argc, char **argv)
 	len_s = str_len(argv[1]);
 	len_b = str_len(argv[2]);
 	len_r = len_s + len_b;
-	sum_result = malloc(sizeof(int) * len_r);
 	if (len_s < len_b)
 	{
 		small = malloc(sizeof(int) * len_s);
 		big = malloc(sizeof(int) * len_b);
-		if(!str_to_arr(argv[1], small) || !str_to_arr(argv[2], big))
+		if (!str_to_arr(argv[1], small) || !str_to_arr(argv[2], big))
 			exit(98);
 	}
 	else
