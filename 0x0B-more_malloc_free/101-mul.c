@@ -8,25 +8,26 @@ int str_len(char *str)
 {
 	int len;
 
-	for (len = 0; str[len] != '\0'; len++)
-		len++;
-	return (len);
+	for (len = 0; *str != '\0'; len++)
+		len++, str++;
+	return (len / 2);
 }
 /**
  * str_to_arr - converts array of chars to array of ints
  * @str: input pointer to string
+ * @len: length of string
  * @arr: input pointer to arr
  * Return: 1 succes, 0 failure
  */
-int str_to_arr(char *str, int *arr)
+int str_to_arr(char *str, int len, int *arr)
 {
 	int i;
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; i < len; i++)
 	{
 		if (str[i] < 48 || str[i] > 57)
 		{
-			printf("Error");
+			printf("Error\n");
 			return (0);
 		}
 		arr[i] = (str[i] - 48);
@@ -48,7 +49,7 @@ void multiply(int *small, int len_s, int *big, int len_b, int **mul_result)
 
 	while (i < len_s)
 	{
-		b = len_b - 1, digits = (len_b + len_s - i);
+		b = len_b - 1, digits = (len_b + len_s - i - 1);
 		while (b >= 0)
 		{
 			product = small[s] * big[b];
@@ -67,9 +68,9 @@ void multiply(int *small, int len_s, int *big, int len_b, int **mul_result)
  * @len_r: length of result array
  * Return: void
  */
-void add(int **mul_result, int nums, int digits, int len_r)
+void add(int **mul_result, int nums, int len_r)
 {
-	int i = digits, j, k = len_r, sum, carry = 0, *add_result;
+	int i = len_r - 1, j, k = len_r, sum, carry = 0, *sum_result;
 
 	sum_result = malloc(sizeof(int) * len_r);
 	len_r--;
@@ -85,7 +86,7 @@ void add(int **mul_result, int nums, int digits, int len_r)
 		carry = sum / 10, i--, len_r--;
 	}
 	sum_result[len_r] = carry;
-	i = 0;
+	i = sum_result[0] == 0 ? 1 : 0;
 	while (i < k)
 		_putchar(sum_result[i++] + '0');
 	_putchar('\n');
@@ -103,7 +104,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(98);
 	}
 	len_s = str_len(argv[1]);
@@ -113,16 +114,18 @@ int main(int argc, char **argv)
 	{
 		small = malloc(sizeof(int) * len_s);
 		big = malloc(sizeof(int) * len_b);
-		if (!str_to_arr(argv[1], small) || !str_to_arr(argv[2], big))
+		if (!str_to_arr(argv[1], len_s, small)
+			|| !str_to_arr(argv[2], len_b, big))
 			exit(98);
 	}
 	else
 	{
-		temp = len_b, len_b = len_s, len_s = temp;
 		small = malloc(sizeof(int) * len_s);
 		big = malloc(sizeof(int) * len_b);
-		if (!str_to_arr(argv[2], small) || !str_to_arr(argv[1], big))
+		if (!str_to_arr(argv[2], len_b, small)
+			|| !str_to_arr(argv[1], len_s, big))
 			exit(98);
+		temp = len_b, len_b = len_s, len_s = temp;
 	}
 	mul_result = malloc(sizeof(int) * (len_s));
 	for (i = 0; i < len_s; i++)
@@ -131,6 +134,6 @@ int main(int argc, char **argv)
 		for (j = 0; j < len_r; j++)
 			mul_result[i][j] = 0;
 	multiply(small, len_s, big, len_b, mul_result);
-	add(mul_result, len_s, len_b, sum_result, len_r);
+	add(mul_result, len_s, len_r);
 	return (0);
 }
