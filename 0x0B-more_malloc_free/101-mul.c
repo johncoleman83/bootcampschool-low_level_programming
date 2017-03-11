@@ -45,6 +45,7 @@ void *_calloc(unsigned int bytes, unsigned int size)
 void add_arrays(int *mul_result, int *sum_result, int len_r)
 {
 	int i = 0, len_r2 = len_r - 1, carry = 0, sum;
+
 	while (i < len_r)
 	{
 		sum = carry + mul_result[len_r2] + sum_result[len_r2];
@@ -99,7 +100,7 @@ int *multiply(char *small, int len_s, char *big, int len_b, int len_r)
 	return (sum_result);
 }
 /**
- * printme - prints my array of the hopeful product here
+ * print_me - prints my array of the hopeful product here
  * @sum_result: pointer to int array with numbers to add
  * @len_r: length of result array
  * Return: void
