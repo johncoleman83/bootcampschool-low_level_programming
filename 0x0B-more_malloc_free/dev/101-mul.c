@@ -57,10 +57,10 @@ void add_arrays(int *mul_result, int *sum_result, int len_r)
 }
 /**
  * multiply - multiplies 2 #'s, prints result, must be 2 #'s
- * @num1: smaller factor
- * @len_1: length of small number
- * @num2: bigger factor
- * @len_2: length of big factor
+ * @num1: factor # 1 (is the smaller of 2 numbers)
+ * @len_1: length of factor 1
+ * @num2: factor # 2 (is the larger of 2 numbers)
+ * @len_2: length of factor 2
  * @len_r: length of result arrays
  * Return: 0 fail, 1 success
  */
@@ -125,8 +125,7 @@ void print_me(int *sum_result, int len_r)
  */
 int main(int argc, char **argv)
 {
-	int len_1, len_2, temp, len_r;
-	int *sum_result;
+	int len_1, len_2, len_r, temp, *sum_result;
 	char *num1, *num2;
 
 	if (argc != 3)
