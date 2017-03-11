@@ -67,11 +67,9 @@ int multiply(char *small, int len_s, char *big, int len_b, int **mul_result)
 			product = (small[s] - '0') * (big[b] - '0');
 			product += carry;
 			mul_result[nums][digits] += product % 10;
-			printf("%d ", mul_result[nums][digits]);
 			digits--, b--, carry = product / 10;
 		}
 		mul_result[nums][digits] += carry;
-		printf("%d\n", mul_result[nums][digits]);
 		nums++, i++, s--;
 	}
 	return (1);
