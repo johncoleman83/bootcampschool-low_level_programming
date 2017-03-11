@@ -86,12 +86,12 @@ int *multiply(char *num1, int len_1, char *num2, int len_2, int len_r)
 	{
 		mul_result = _calloc(sizeof(int), len_r);
 		i2 = len_2 - 1, digit = (len_r - 1 - i);
-		if (!is_digit(num1[i1]) || !is_digit(num2[i1]))
+		if (!is_digit(num1[i1]))
 			return (NULL);
 		carry = 0;
 		while (i2 >= 0)
 		{
-			if (!is_digit(num2[i2]) || !is_digit(num2[i2]))
+			if (!is_digit(num2[i2]))
 				return (NULL);
 			product = (num1[i1] - '0') * (num2[i2] - '0');
 			product += carry;
