@@ -14,7 +14,7 @@ int str_len(char *str)
 }
 /**
  * _calloc - allocates memory for an array using malloc
- * @nmemb: elements of memory needed
+ * @bytes: bytes of memory needed per size requested
  * @size: size in bytes of each element
  * Return: pointer to the allocated memory
  */
