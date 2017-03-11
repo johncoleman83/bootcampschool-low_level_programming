@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <limits.h>
 /**
  * str_len - finds string length
  * @str: input pointer to string
