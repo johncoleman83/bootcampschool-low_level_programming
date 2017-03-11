@@ -36,25 +36,47 @@ void *_calloc(unsigned int bytes, unsigned int size)
 	return ((void *)p);
 }
 /**
+ * add_arrays - adds 2 arrays of ints
+ * @mul_result: pointer to array with numbers from product
+ * @sum_result: pointer to array with numbers from total sum
+ * @len_r: length of both arrays
+ * Return: void
+ */
+void add_arrays(int *mul_result, int *sum_result, int len_r)
+{
+	int i = 0, len_r2 = len_r - 1, carry = 0, sum;
+	while (i < len_r)
+	{
+		sum = carry + mul_result[len_r2] + sum_result[len_r2];
+		sum_result[len_r2] = sum % 10;
+		carry = sum / 10;
+		i++;
+		len_r2--;
+	}
+}
+/**
  * multiply - multiplies 2 #'s, prints result, must be 2 #'s
  * @small: smaller factor
  * @len_s: length of small number
  * @big: bigger factor
  * @len_b: length of big factor
- * @mul_result: pointer to result
+ * @len_r: length of result arrays
  * Return: 0 fail, 1 success
  */
-int multiply(char *small, int len_s, char *big, int len_b, int **mul_result)
+int *multiply(char *small, int len_s, char *big, int len_b, int len_r)
 {
-	int i = 0, s = len_s - 1, b, product, carry, nums = 0, digits;
+	int i = 0, s = len_s - 1;
+	int b, product, carry, digit, *mul_result, *sum_result;
 
+	sum_result = _calloc(sizeof(int), (len_r));
 	while (i < len_s)
 	{
-		b = len_b - 1, digits = (len_b + len_s - i - 1);
+		mul_result = _calloc(sizeof(int), len_r);
+		b = len_b - 1, digit = (len_r - 1 - i);
 		if (small[s] < '0' || small[s] > '9')
 		{
 			printf("Error\n");
-			return (0);
+			return (NULL);
 		}
 		carry = 0;
 		while (b >= 0)
@@ -62,49 +84,35 @@ int multiply(char *small, int len_s, char *big, int len_b, int **mul_result)
 			if (big[b] < '0' || big[b] > '9')
 			{
 				printf("Error\n");
-				return (0);
+				return (NULL);
 			}
 			product = (small[s] - '0') * (big[b] - '0');
 			product += carry;
-			mul_result[nums][digits] += product % 10;
-			digits--, b--, carry = product / 10;
+			mul_result[digit] += product % 10;
+			carry = product / 10;
+			digit--, b--;
 		}
-		mul_result[nums][digits] += carry;
-		nums++, i++, s--;
+		add_arrays(mul_result, sum_result, len_r);
+		free(mul_result);
+	    i++, s--;
 	}
-	return (1);
+	return (sum_result);
 }
 /**
- * add_print - adds array of strings together and prints result
- * @mul_result: pointer to 2D int array with numbers to add
- * @nums: rows of array
+ * printme - prints my array of the hopeful product here
+ * @sum_result: pointer to int array with numbers to add
  * @len_r: length of result array
  * Return: void
  */
-void add_print(int **mul_result, int nums, int len_r)
+void print_me(int *sum_result, int len_r)
 {
-	int i = len_r - 1, j, k = len_r, sum, carry = 0, *sum_result;
+	int i = 0;
 
-	sum_result = _calloc(sizeof(int), len_r);
-	len_r--;
-	while (i >= 0)
-	{
-		j = 0, sum = carry;
-		while (j < nums)
-		{
-			sum += mul_result[j][i];
-			j++;
-		}
-		sum_result[len_r] = sum % 10;
-		carry = sum / 10, i--, len_r--;
-	}
-	sum_result[len_r] = carry;
-	i = 0;
-	while (sum_result[i] == 0 && i < k)
+	while (sum_result[i] == 0 && i < len_r)
 		i++;
-	if (i == k)
+	if (i == len_r)
 		_putchar('0');
-	while (i < k)
+	while (i < len_r)
 		_putchar(sum_result[i++] + '0');
 	_putchar('\n');
 }
@@ -116,8 +124,8 @@ void add_print(int **mul_result, int nums, int len_r)
  */
 int main(int argc, char **argv)
 {
-	int len_s, len_b, temp, len_r, i;
-	int **mul_result;
+	int len_s, len_b, temp, len_r;
+	int *sum_result;
 	char *small, *big;
 
 	if (argc != 3)
@@ -134,11 +142,9 @@ int main(int argc, char **argv)
 		small = argv[2], big = argv[1];
 		temp = len_b, len_b = len_s, len_s = temp;
 	}
-	mul_result = _calloc(sizeof(int), len_s);
-	for (i = 0; i < len_s; i++)
-		mul_result[i] = _calloc(sizeof(int), len_r);
-	if (!multiply(small, len_s, big, len_b, mul_result))
+	sum_result = multiply(small, len_s, big, len_b, len_r);
+	if (sum_result == NULL)
 		exit(98);
-	add_print(mul_result, len_s, len_r);
+	print_me(sum_result, len_r);
 	return (0);
 }
