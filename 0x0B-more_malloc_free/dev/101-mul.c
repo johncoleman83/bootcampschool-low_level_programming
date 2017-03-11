@@ -56,6 +56,18 @@ void add_arrays(int *mul_result, int *sum_result, int len_r)
 	}
 }
 /**
+ * is_digit - checks for digits
+ * @c: input character to check for digit
+ * Return: 0 failure, 1 success
+ */
+int is_digit(char c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	printf("Error\n");
+	return (0);
+}
+/**
  * multiply - multiplies 2 #'s, prints result, must be 2 #'s
  * @num1: factor # 1 (is the smaller of 2 numbers)
  * @len_1: length of factor 1
@@ -74,19 +86,13 @@ int *multiply(char *num1, int len_1, char *num2, int len_2, int len_r)
 	{
 		mul_result = _calloc(sizeof(int), len_r);
 		i2 = len_2 - 1, digit = (len_r - 1 - i);
-		if (num1[i1] < '0' || num2[i1] > '9')
-		{
-			printf("Error\n");
+		if (!is_digit(num1[i1]) || !is_digit(num2[i1]))
 			return (NULL);
-		}
 		carry = 0;
 		while (i2 >= 0)
 		{
-			if (num2[i2] < '0' || num2[i2] > '9')
-			{
-				printf("Error\n");
+			if (!is_digit(num2[i2]) || !is_digit(num2[i2]))
 				return (NULL);
-			}
 			product = (num1[i1] - '0') * (num2[i2] - '0');
 			product += carry;
 			mul_result[digit] += product % 10;
