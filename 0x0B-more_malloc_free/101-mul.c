@@ -57,45 +57,45 @@ void add_arrays(int *mul_result, int *sum_result, int len_r)
 }
 /**
  * multiply - multiplies 2 #'s, prints result, must be 2 #'s
- * @small: smaller factor
- * @len_s: length of small number
- * @big: bigger factor
- * @len_b: length of big factor
+ * @num1: smaller factor
+ * @len_1: length of small number
+ * @num2: bigger factor
+ * @len_2: length of big factor
  * @len_r: length of result arrays
  * Return: 0 fail, 1 success
  */
-int *multiply(char *small, int len_s, char *big, int len_b, int len_r)
+int *multiply(char *num1, int len_1, char *num2, int len_2, int len_r)
 {
-	int i = 0, s = len_s - 1;
-	int b, product, carry, digit, *mul_result, *sum_result;
+	int i = 0, i1 = len_1 - 1;
+	int i2, product, carry, digit, *mul_result, *sum_result;
 
 	sum_result = _calloc(sizeof(int), (len_r));
-	while (i < len_s)
+	while (i < len_1)
 	{
 		mul_result = _calloc(sizeof(int), len_r);
-		b = len_b - 1, digit = (len_r - 1 - i);
-		if (small[s] < '0' || small[s] > '9')
+		i2 = len_2 - 1, digit = (len_r - 1 - i);
+		if (num1[i1] < '0' || num2[i1] > '9')
 		{
 			printf("Error\n");
 			return (NULL);
 		}
 		carry = 0;
-		while (b >= 0)
+		while (i2 >= 0)
 		{
-			if (big[b] < '0' || big[b] > '9')
+			if (num2[i2] < '0' || num2[i2] > '9')
 			{
 				printf("Error\n");
 				return (NULL);
 			}
-			product = (small[s] - '0') * (big[b] - '0');
+			product = (num1[i1] - '0') * (num2[i2] - '0');
 			product += carry;
 			mul_result[digit] += product % 10;
 			carry = product / 10;
-			digit--, b--;
+			digit--, i2--;
 		}
 		add_arrays(mul_result, sum_result, len_r);
 		free(mul_result);
-	    i++, s--;
+	    i++, i1--;
 	}
 	return (sum_result);
 }
@@ -125,25 +125,25 @@ void print_me(int *sum_result, int len_r)
  */
 int main(int argc, char **argv)
 {
-	int len_s, len_b, temp, len_r;
+	int len_1, len_2, temp, len_r;
 	int *sum_result;
-	char *small, *big;
+	char *num1, *num2;
 
 	if (argc != 3)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	len_s = str_len(argv[1]), len_b = str_len(argv[2]);
-	len_r = len_s + len_b;
-	if (len_s < len_b)
-		small = argv[1], big = argv[2];
+	len_1 = str_len(argv[1]), len_2 = str_len(argv[2]);
+	len_r = len_1 + len_2;
+	if (len_1 < len_2)
+		num1 = argv[1], num2 = argv[2];
 	else
 	{
-		small = argv[2], big = argv[1];
-		temp = len_b, len_b = len_s, len_s = temp;
+		num1 = argv[2], num2 = argv[1];
+		temp = len_2, len_2 = len_1, len_1 = temp;
 	}
-	sum_result = multiply(small, len_s, big, len_b, len_r);
+	sum_result = multiply(num1, len_1, num2, len_2, len_r);
 	if (sum_result == NULL)
 		exit(98);
 	print_me(sum_result, len_r);
