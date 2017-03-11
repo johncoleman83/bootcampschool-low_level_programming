@@ -46,7 +46,7 @@ void *_calloc(unsigned int bytes, unsigned int size)
  */
 int multiply(char *small, int len_s, char *big, int len_b, int **mul_result)
 {
-	int i = 0, s = len_s - 1, b, product, carry = 0, nums = 0, digits;
+	int i = 0, s = len_s - 1, b, product, carry, nums = 0, digits;
 
 	while (i < len_s)
 	{
@@ -56,6 +56,7 @@ int multiply(char *small, int len_s, char *big, int len_b, int **mul_result)
 			printf("Error\n");
 			return (0);
 		}
+		carry = 0;
 		while (b >= 0)
 		{
 			if (big[b] < '0' || big[b] > '9')
@@ -66,9 +67,11 @@ int multiply(char *small, int len_s, char *big, int len_b, int **mul_result)
 			product = (small[s] - '0') * (big[b] - '0');
 			product += carry;
 			mul_result[nums][digits] += product % 10;
+			printf("%d ", mul_result[nums][digits]);
 			digits--, b--, carry = product / 10;
 		}
 		mul_result[nums][digits] += carry;
+		printf("%d\n", mul_result[nums][digits]);
 		nums++, i++, s--;
 	}
 	return (1);
