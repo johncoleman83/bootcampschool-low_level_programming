@@ -55,15 +55,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 			else
 			{
 				free(snoop_dogg->owner);
-				free(snoop_dogg->name);
 				free(snoop_dogg);
 			}
 		}
 		else
-		{
-			free(snoop_dogg->name);
 			free(snoop_dogg);
-		}
 	}
 	return (NULL);
 }
