@@ -45,7 +45,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *snoop_dogg;
 
 	snoop_dogg = malloc(sizeof(struct dog));
-	if (snoop_dogg)
+	if (snoop_dogg != NULL)
 	{
 		if (my_strcpy(snoop_dogg->name, name))
 		{
