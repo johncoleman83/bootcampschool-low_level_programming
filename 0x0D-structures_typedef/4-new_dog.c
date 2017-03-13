@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * my_strlen - finds string length in order to malloc properly
  * @str: input string
@@ -17,21 +18,14 @@ unsigned int my_strlen(char *str)
  * my_strcpy - copies string
  * @to: pointer to new string
  * @from: pointer to string to copy
- * Return: 1 success, 0 fail
+ * Return: void
  */
-int my_strcpy(char *to, char *from)
+void my_strcpy(char *to, char *from)
 {
 	unsigned int i, len = my_strlen(from);
 
-	to = malloc(sizeof(char) * len);
-	if (to)
-	{
-		for (i = 0; i < len; i++)
-			to[i] = from[i];
-		return (1);
-	}
-	free(to);
-	return (0);
+	for (i = 0; i < len; i++)
+		to[i] = from[i];
 }
 /**
  * new_dog - creates new type of struct dog
@@ -42,23 +36,31 @@ int my_strcpy(char *to, char *from)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	unsigned int name_len = my_strlen(name), owner_len = my_strlen(owner);
 	dog_t *snoop_dogg;
 
 	snoop_dogg = malloc(sizeof(dog_t));
 	if (snoop_dogg)
 	{
-		if (my_strcpy(snoop_dogg->name, name))
+		snoop_dogg->name = calloc(name_len, sizeof(char));
+		if (snoop_dogg->name)
 		{
-			snoop_dogg->name = name;
-			snoop_dogg->age = age;
-			if (my_strcpy(snoop_dogg->owner, owner))
+			snoop_dogg->owner = calloc(owner_len, sizeof(char));
+			if (snoop_dogg->owner)
 			{
-				snoop_dogg->owner = owner;
+				my_strcpy(snoop_dogg->name, name);
+				snoop_dogg->age = age;
+				my_strcpy(snoop_dogg->owner, owner);
 				return (snoop_dogg);
 			}
 			else
+			{
 				free(snoop_dogg->name);
+				free(snoop_dogg);
+			}
 		}
+		else
+			free(snoop_dogg);
 	}
 	return (NULL);
 }
