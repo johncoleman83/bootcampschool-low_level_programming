@@ -24,7 +24,7 @@ int my_strcpy(char *to, char *from)
 	int i, len = my_strlen(from);
 
 	to = malloc(sizeof(char) * len);
-	if (to)
+	if (to != NULL)
 	{
 		for (i = 0; i < len; i++)
 			to[i] = from[i];
