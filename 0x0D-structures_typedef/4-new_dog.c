@@ -23,7 +23,7 @@ void my_strcpy(char *to, char *from)
 {
 	unsigned int i, len = my_strlen(from);
 
-	for (i = 0; i < len; i++)
+	for (i = 0; i <= len; i++)
 		to[i] = from[i];
 }
 /**
