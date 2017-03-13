@@ -3,11 +3,11 @@
 /**
  * my_strlen - finds string length in order to malloc properly
  * @str: input string
- * Return: string length integer
+ * Return: string length unsigned integer
  */
-int my_strlen(char *str)
+unsigned int my_strlen(char *str)
 {
-	int i = 0;
+	unsigned int i = 0;
 
 	while (*(str + i) != '\0')
 		i++;
@@ -21,10 +21,10 @@ int my_strlen(char *str)
  */
 int my_strcpy(char *to, char *from)
 {
-	int i, len = my_strlen(from);
+	unsigned int i, len = my_strlen(from);
 
 	to = malloc(sizeof(char) * len);
-	if (to != NULL)
+	if (to)
 	{
 		for (i = 0; i < len; i++)
 			to[i] = from[i];
@@ -45,7 +45,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *snoop_dogg;
 
 	snoop_dogg = malloc(sizeof(struct dog));
-	if (snoop_dogg != NULL)
+	if (snoop_dogg)
 	{
 		if (my_strcpy(snoop_dogg->name, name))
 		{
