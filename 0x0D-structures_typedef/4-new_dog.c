@@ -22,6 +22,7 @@ int my_strlen(char *str)
 int my_strcpy(char *to, char *from)
 {
 	int i, len = my_strlen(from);
+
 	to = malloc(sizeof(char) * len);
 	if (to)
 	{
@@ -29,6 +30,7 @@ int my_strcpy(char *to, char *from)
 			to[i] = from[i];
 		return (1);
 	}
+	free(to);
 	return (0);
 }
 /**
@@ -54,14 +56,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 				snoop_dogg->owner = owner;
 				return (snoop_dogg);
 			}
-			else
-			{
-				free(snoop_dogg->owner);
-				free(snoop_dogg->name);
-			}
 		}
-		else
-			free(snoop_dogg->name);
 	}
 	free(snoop_dogg);
 	return (NULL);
