@@ -1,6 +1,5 @@
 #include "dog.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * my_strlen - finds string length in order to malloc properly
  * @str: input string
@@ -42,10 +41,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	snoop_dogg = malloc(sizeof(dog_t));
 	if (snoop_dogg)
 	{
-		snoop_dogg->name = calloc(name_len, sizeof(char));
+		snoop_dogg->name = malloc(sizeof(char) * name_len);
 		if (snoop_dogg->name)
 		{
-			snoop_dogg->owner = calloc(owner_len, sizeof(char));
+			snoop_dogg->owner = malloc(sizeof(char) * owner_len);
 			if (snoop_dogg->owner)
 			{
 				my_strcpy(snoop_dogg->name, name);
