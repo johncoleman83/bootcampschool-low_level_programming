@@ -41,10 +41,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	snoop_dogg = malloc(sizeof(dog_t));
 	if (snoop_dogg)
 	{
-		snoop_dogg->name = malloc(sizeof(char) * name_len);
+		snoop_dogg->name = malloc(sizeof(char) * (name_len + 1));
 		if (snoop_dogg->name)
 		{
-			snoop_dogg->owner = malloc(sizeof(char) * owner_len);
+			snoop_dogg->owner = malloc(sizeof(char) * (owner_len + 1));
 			if (snoop_dogg->owner)
 			{
 				my_strcpy(snoop_dogg->name, name);
