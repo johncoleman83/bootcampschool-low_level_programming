@@ -18,7 +18,7 @@ int (*get_op_func(char *s))(int, int)
 
 	while (ops[i].op)
 	{
-		if (strncmp(s, ops[i].op, 1))
+		if (strcmp(ops[i].op, s))
 			i++;
 		else
 			return (ops[i].f);
