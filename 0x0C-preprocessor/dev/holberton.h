@@ -3,4 +3,5 @@
 #include <stdio.h>
 #include <stdlib.h>
 int _putchar(char c);
+#define A 
 #endif
