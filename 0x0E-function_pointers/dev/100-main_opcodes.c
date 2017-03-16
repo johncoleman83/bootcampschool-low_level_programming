@@ -21,13 +21,12 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		return (2);
 	}
-	if (bytes > 0)
+	for (i = 0; i < bytes; i++)
 	{
-		for (i = 0; i < bytes - 1; i++)
-		{
+		if (i < bytes - 1)
 			printf("%02x ", ((unsigned char *)main)[i]);
-		}
-		printf("%hhx\n", ((unsigned char *)main[i]));
+		else
+			printf("%hhx\n", ((unsigned char *)main)[i]);
 	}
 	return (0);
 }
