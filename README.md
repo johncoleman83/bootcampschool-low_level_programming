@@ -43,6 +43,54 @@ functions and tasks in C Language.
   * difference between read-only string and read-write strings
   * scope of variables
 
+* 0x05-pointers_arrays_strings
+  * continuation of 0x04-pointers_arrays_strings and covers the same
+  learning objectives
+
+* 0x06-pointers_arrays_strings
+  * continuation of 0x05-pointers_arrays_strings and covers even more
+  * multidimensional arrays and how to use them
+  * the most common C standard library functions
+
+* 0x07-recursion
+  * what is recursion and how to use it
+  * void functions vs. other type functions
+
+* 0x08-static_libraries
+  * creating and using static libraries
+  * using ``ar``, ``ranlib``, and ``nm``
+
+* 0x09-argc_argv
+  * using arguments in your program
+  * prototypes of ``argc`` and ``**argv`` for ``main()``
+  * compile functions with unused variables using ``(void)`` or
+  ``__attribute__((unused))``
+
+* 0x0A-malloc_free
+  * difference between automatic and dynamic allocation
+  * functions of ``malloc()`` and ``free()``
+  * when and why to use ``malloc()``
+  * how to use ``valgrind`` to check for memory leaks
+
+* 0x0B-more_malloc_free
+  * how and when to use ``exit()`` to leave a function
+  * functions: ``calloc()`` and ``realloc()``
+
+* 0x0C-preprocessor
+  * macros and how to use them
+  * most common predefined macros
+  * how to include guard header files for double inclusion
+
+* 0x0D-structures_typedef
+  * structures ``struct`` and how to use them
+  * ``typedef`` and how to use it
+  * how define structs in header files
+
+* 0x0E-function_pointers
+  * function pointers and how to use them!
+  * callback functions
+  * what exactly does a function pointer hold
+
 ## URL
 
 https://github.com/johncoleman83/holbertonschool-low_level_programming/
