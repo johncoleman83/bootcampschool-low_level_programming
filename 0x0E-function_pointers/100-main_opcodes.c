@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		return (2);
 	}
-	ir (bytes < 0)
+	if (bytes < 0)
 	{
 		printf("Error\n");
 		return (1);
