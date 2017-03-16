@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - follows instructions of input operation
+ * main - prints n number of opcodes from main()
  * @argc: count of inputs
- * @argv: array of inputs
- * Return: 0 success
+ * @argv: array of input including n # of bytes to print
+ * Return: 0 success, 1 error, 2 error
  */
 int main(int argc, char **argv)
 {
