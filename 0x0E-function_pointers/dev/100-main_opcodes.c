@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv)
 {
-	int i, bytes, (*p_main)(int, char **) = main;
+	int i, bytes;
 
 	if (argc != 2)
 	{
@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 		return (2);
 	}
 	for (i = 0; i < bytes; i++)
-		printf("%02x ", ((unsigned char *)p_main)[i]);
+		printf("%02x ", ((unsigned char *)main)[i]);
 	printf("\n");
 	return (0);
 }
