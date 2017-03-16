@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 		if (i < bytes - 1)
 			printf("%02x ", ((unsigned char *)main)[i]);
 		else
-			printf("%hhx\n", ((unsigned char *)main)[i]);
+			printf("%02x\n", ((unsigned char *)main)[i]);
 	}
 	return (0);
 }
