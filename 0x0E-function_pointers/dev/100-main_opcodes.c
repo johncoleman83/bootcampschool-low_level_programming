@@ -8,13 +8,14 @@
  */
 int main(int argc, char **argv)
 {
-	int i, bytes = atoi(argv[1]);
+	int i, bytes;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	bytes = atoi(argv[1]);
 	if (bytes < 0)
 	{
 		printf("Error\n");
