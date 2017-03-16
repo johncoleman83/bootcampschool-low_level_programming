@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 		return (2);
 	}
 	for (i = 0; i < bytes; i++)
-		printf("%x ", ((unsigned char *)main)[i]);
+		printf("%02x ", ((unsigned char *)main)[i]);
 	printf("\n");
 	return (0);
 }
