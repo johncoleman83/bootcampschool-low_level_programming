@@ -23,11 +23,11 @@ int main(int argc, char **argv)
 	}
 	if (bytes > 0)
 	{
-	for (i = 0; i < bytes; i++)
-	{
-		printf("%02hhx ", ((unsigned char *)main)[i]);
-	}
-	printf("\n");
+		for (i = 0; i < bytes - 1; i++)
+		{
+			printf("%02x ", ((unsigned char *)main)[i]);
+		}
+		printf("%hhx\n", ((unsigned char *)main[i]));
 	}
 	return (0);
 }
