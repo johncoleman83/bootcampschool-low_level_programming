@@ -5,6 +5,10 @@
 This Repo has some of my (David John Coleman II) projects for Holberton School.  
 The focus of these projects are learning the C Programming Language.
 
+## Primary Concepts Learned
+  * how and when to use ``exit()`` to leave a function
+  * functions: ``calloc()`` and ``realloc()``
+
 ## URL
 
 https://github.com/johncoleman83/holbertonschool-low_level_programming

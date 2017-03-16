@@ -5,10 +5,13 @@
 This Repo has some of my (David John Coleman II) projects for Holberton School.  
 The focus of these projects are learning the C Programming Language.
 
-## Primary Concepts Learned
-  * macros and how to use them
-  * most common predefined macros
-  * how to include guard header files for double inclusion
+## Primary concepts learned
+  * nested loops and how to use them
+  * creating functions, and using them in different C files
+  * difference between declaring a function and defining a function
+  * prototypes and scope of variables
+  * ``gcc`` flags: ``-Wall``, ``-Werror``, ``-pedantic``, ``-Wextra``
+  * header files and including them with ``#include``
 
 ## URL
 
