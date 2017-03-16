@@ -31,6 +31,18 @@ functions and tasks in C Language.
   * ``gcc`` flags: ``-Wall``, ``-Werror``, ``-pedantic``, ``-Wextra``
   * header files and including them with ``#include``
 
+* 0x03-more_functions_nested_loops
+  * continuation of 0x02-functions_nested_loops and covers the same
+  learning objectives
+
+* 0x04-pointers_arrays_strings
+  * pointers! how to use them, why to use them?
+  * arrays and how to use them
+  * difference between arrays and pointers
+  * strings and how to manipulate them
+  * difference between read-only string and read-write strings
+  * scope of variables
+
 ## URL
 
 https://github.com/johncoleman83/holbertonschool-low_level_programming/
