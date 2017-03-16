@@ -13,10 +13,15 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (0);
+		return (2);
+	}
+	ir (bytes < 0)
+	{
+		printf("Error\n");
+		return (1);
 	}
 	for (i = 0; i < bytes; i++)
 		printf("%x ", ((unsigned char *)main)[i]);
-	putchar('\n');
+	printf("\n");
 	return (0);
 }
