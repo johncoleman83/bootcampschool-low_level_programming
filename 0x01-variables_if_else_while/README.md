@@ -13,7 +13,6 @@ The focus of these projects are learning the C Programming Language.
   * printing differnt types with ``putchar()`` or ``printf()``
   * ``gcc`` flags ``-m32`` and ``-m64``
 
-
 ## URL
 
 https://github.com/johncoleman83/holbertonschool-low_level_programming
@@ -24,4 +23,4 @@ David John Coleman II.	Check out my website http://www.davidjohncoleman.com/
 
 ## License
 
-WTFPL License - http://www.wtfpl.net/
+Public Domain, no copyright protection

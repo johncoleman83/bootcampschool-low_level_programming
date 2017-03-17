@@ -25,4 +25,4 @@ David John Coleman II.	Check out my website http://www.davidjohncoleman.com/
 
 ## License
 
-WTFPL License - http://www.wtfpl.net/
+Public Domain, no copyright protection
