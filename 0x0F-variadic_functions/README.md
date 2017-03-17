@@ -1,4 +1,4 @@
-# Function Pointers
+# Variadic Functions
 
 ## Description
 
