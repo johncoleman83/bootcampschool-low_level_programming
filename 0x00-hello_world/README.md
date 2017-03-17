@@ -3,7 +3,7 @@
 ## Description
 
 This Repo has some of my (David John Coleman II) projects for Holberton School.
-The focus of these projects are learning the C Programming Language.  In
+The focus of these projects is learning the C Programming Language.  In
 specific, these projects are designed to show how the GNU C Compiler functions,
 Holberton C Language syntax and style recommendations.  And how to print a basic
 string from the main() function in a C program.  Primarily, these scripts are
