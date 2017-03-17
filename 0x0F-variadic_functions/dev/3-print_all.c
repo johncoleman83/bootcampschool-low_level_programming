@@ -8,7 +8,7 @@ void print_all(const char * const format, ...)
 {
 	va_list valist;
 	char *temp_s, temp_c;
-	double temp_f;
+	float temp_f;
 	int temp_d, i = 0, orders;
 
 	va_start(valist, format);
@@ -27,7 +27,7 @@ void print_all(const char * const format, ...)
 			break;
 		case 'f' :
 			temp_f = va_arg(valist, double);
-			printf("%lf", temp_f);
+			printf("%g", temp_f);
 			break;
 		case 's' :
 			temp_s = va_arg(valist, char*);
