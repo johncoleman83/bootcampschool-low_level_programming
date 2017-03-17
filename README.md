@@ -91,10 +91,6 @@ functions and tasks in C Language.
   * callback functions
   * what exactly does a function pointer hold
 
-## URL
-
-https://github.com/johncoleman83/holbertonschool-low_level_programming/
-
 ## Author
 
 David John Coleman II.	Check out my website http://www.davidjohncoleman.com/
