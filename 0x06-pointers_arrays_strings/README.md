@@ -1,4 +1,4 @@
-# Holberton School Projects Repository
+# Pointers, Arrays, and Strings Part 3 of 3
 
 ## Description
 

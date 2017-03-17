@@ -1,4 +1,4 @@
-# Holberton School Projects Repository
+# Hello, World of C Language
 
 ## Description
 

@@ -1,4 +1,4 @@
-# Holberton School Projects Repository
+# Variables, if, else, and while loops
 
 ## Description
 

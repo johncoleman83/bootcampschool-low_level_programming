@@ -1,4 +1,4 @@
-# Holberton School Projects Repository
+# ``argc`` and ``**argv`` as inputs for ``main()``
 
 ## Description
 

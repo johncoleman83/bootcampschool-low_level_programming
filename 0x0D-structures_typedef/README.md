@@ -1,4 +1,4 @@
-# Holberton School Projects Repository
+# Structures and Typedefs
 
 ## Description
 

@@ -1,4 +1,4 @@
-# Holberton School Projects Repository
+# Malloc and Free part 1 of 2
 
 ## Description
 

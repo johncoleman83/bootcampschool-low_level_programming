@@ -1,4 +1,4 @@
-# Holberton School Projects Repository
+# Static Libraries
 
 ## Description
 
