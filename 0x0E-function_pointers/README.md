@@ -7,13 +7,9 @@ The focus of these projects are learning the C Programming Language.
 
 ## Primary Concepts Learned
 
-  * function pointers and how to use them!
-  * callback functions
-  * what exactly does a function pointer hold
-
-## URL
-
-https://github.com/johncoleman83/holbertonschool-low_level_programming
+* function pointers and how to use them!
+* callback functions
+* what exactly does a function pointer hold
 
 ## Author
 
