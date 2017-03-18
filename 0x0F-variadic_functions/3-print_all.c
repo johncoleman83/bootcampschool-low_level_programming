@@ -25,7 +25,7 @@ void print_all(const char * const format, ...)
 				printf("%d", va_arg(valist, int));
 				break;
 			case 'f':
-				printf("%g", va_arg(valist, double));
+				printf("%f", va_arg(valist, double));
 				break;
 			case 's':
 				temp_s = va_arg(valist, char*);
@@ -44,6 +44,6 @@ void print_all(const char * const format, ...)
 				printf(", ");
 		}
 		va_end(valist);
-		printf("\n");
 	}
+	printf("\n");
 }
