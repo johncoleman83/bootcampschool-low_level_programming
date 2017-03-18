@@ -44,6 +44,6 @@ void print_all(const char * const format, ...)
 				printf(", ");
 		}
 		va_end(valist);
+		printf("\n");
 	}
-	printf("\n");
 }
