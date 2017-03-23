@@ -13,6 +13,5 @@ size_t print_list(const list_t *h)
 	{
 		printf("[%d] %s\n", temp_p->len, temp_p->str);
 	}
-	free(h);
 	return (i);
 }
