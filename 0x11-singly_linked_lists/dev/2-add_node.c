@@ -6,7 +6,7 @@
  */
 int _strlen(const char *s)
 {
-	int len = 0;
+	unsigned int len = 0;
 
 	while (s[len] != '\0')
 		len++;
@@ -25,11 +25,10 @@ list_t *add_node(list_t **head, const char *str)
 
 	if (new_node == NULL)
 	{
-		return (0);
+		return (NULL);
 	}
 	new_node->str = strdup(str);
 	new_node->len = length;
 	new_node->next = *head;
-	printf("[%d] %s\n", length, str);
 	return (new_node);
 }
