@@ -1,4 +1,4 @@
-# Variadic Functions
+# Linked Lists
 
 ## Description
 
