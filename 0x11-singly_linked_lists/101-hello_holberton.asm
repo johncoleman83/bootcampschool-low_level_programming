@@ -1,5 +1,6 @@
 	.file	"101-hello_holberton.c"
 	.section	.rodata
+CLI
 .LC0:
 	.string	"Hello, Holberton"
 	.text
@@ -7,7 +8,6 @@
 	.type	main, @function
 main:
 .LFB0:
-	cli
 	.cfi_startproc
 	pushq	%rcx
 	.cfi_def_cfa_offset 16
