@@ -13,9 +13,9 @@ int _strlen(const char *s)
 	return (len);
 }
 /**
- * add_node_end - adds new node to linked list
+ * add_node_end - adds new node to end of linked list
  * @head: beginning of linked list
- * @str: new string to be added to link list
+ * @str: new string to be added to linked list
  * Return: pointer to new node
  */
 list_t *add_node_end(list_t **head, const char *str)

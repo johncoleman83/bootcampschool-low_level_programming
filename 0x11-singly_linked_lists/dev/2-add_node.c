@@ -13,7 +13,7 @@ int _strlen(const char *s)
 	return (len);
 }
 /**
- * add_node - adds new node to linked list
+ * add_node - adds new node to beginning of linked list
  * @head: beginning of linked list
  * @str: new string to be added to link list
  * Return: pointer to new node
