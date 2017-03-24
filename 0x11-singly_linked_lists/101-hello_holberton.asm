@@ -7,6 +7,7 @@
 	.type	main, @function
 main:
 .LFB0:
+	cli
 	.cfi_startproc
 	pushq	%rcx
 	.cfi_def_cfa_offset 16
