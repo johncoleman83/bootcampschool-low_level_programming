@@ -111,6 +111,16 @@ and tasks in C Language.
   * Variadic functions, why and how to use them
   * ``va_start``, ``va_arg``, ``va_end``, ``const``, ``stdarg``
 
+* 0x11-singly_linked_lists
+
+  * When and why using linked lists vs arrays
+  * How to build and use linked lists with structs
+
+* 0x12-more_singly_linked_lists
+
+  * When and why using linked lists vs arrays
+  * How to build and use linked lists with structs
+
 ## Author
 
 David John Coleman II.	Check out my website http://www.davidjohncoleman.com/

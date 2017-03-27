@@ -1,4 +1,4 @@
-# Linked Lists
+# More Linked Lists
 
 ## Description
 
@@ -7,8 +7,9 @@ The focus of these projects is learning the C Programming Language.
 
 ## Primary Concepts Learned
 
+  * More linked lists!
   * When and why using linked lists vs arrays
-  * How to build and use linked lists
+  * How to build and use linked lists using structs
 
 ### C Functions used
 
