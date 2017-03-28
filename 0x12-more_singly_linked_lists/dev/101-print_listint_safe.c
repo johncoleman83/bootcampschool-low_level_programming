@@ -11,7 +11,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (temp_h)
 	{
-		printf("%d\n", temp_h->n);
+		printf("[%p] %d\n", (void *)temp_h, temp_h->n);
 		i++;
 		temp_h = temp_h->next;
 		check_next = head;
@@ -19,7 +19,10 @@ size_t print_listint_safe(const listint_t *head)
 		while (j < i)
 		{
 			if (temp_h == check_next)
+			{
+				printf("-> [%p] %d\n", (void *)temp_h, temp_h->n);
 				return (i);
+			}
 			check_next = check_next->next;
 			j++;
 		}
