@@ -16,7 +16,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		temp_node = temp_node->next;
 		i++;
 	}
-	if (temp_node || i == idx - 1)
+	if (temp_node || i >= idx - 1)
 	{
 		new_node = malloc(sizeof(listint_t));
 		new_node->n = n;
