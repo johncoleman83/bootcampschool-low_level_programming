@@ -9,7 +9,7 @@ listint_t *find_listint_loop(listint_t *head)
 	listint_t *temp = head, *check;
 
 	if (head == head->next)
-		return (*head);
+		return (head);
 	while (temp)
 	{
 		temp = temp->next;
