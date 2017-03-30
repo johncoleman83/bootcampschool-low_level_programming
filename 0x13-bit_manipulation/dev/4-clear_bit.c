@@ -1,4 +1,4 @@
-#include "lists.h"
+#include "holberton.h"
 /**
  * clear_bit - sets value of bit to 0 at given index
  * @n: integer to find bit to convert
