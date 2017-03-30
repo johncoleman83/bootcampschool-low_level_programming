@@ -7,10 +7,10 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int copy = n;
-	int position = 0;
+	int index = 0;
 
 	while ((copy >>= 1) > 0)
-		position++;
-	while (position >= 0)
-		_putchar((n >> position--) & 1 ? '1' : '0');
+		index++;
+	while (index >= 0)
+		_putchar((n >> index--) & 1 ? '1' : '0');
 }
