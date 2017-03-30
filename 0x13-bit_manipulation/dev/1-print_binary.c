@@ -6,5 +6,11 @@
  */
 void print_binary(unsigned long int n)
 {
+	int size = sizeof(unsigned long int) * 8;
+
+	while (n != 0)
+	{
+		
+	}
 	return ();
 }
