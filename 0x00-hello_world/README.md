@@ -10,7 +10,8 @@ string from the main() function in a C program.  Primarily, these scripts are
 used to compile C code and return the differet source code for each stage of the
 compilation process.  Including stages: Preprocessor, Compiler, Assembler, and
 Linker.  Additionally, the .c files demonstrate printing strings without using
-``printf()`` nor ``puts()``
+``printf()`` nor ``puts()``.  __Environment:__ Ubuntu 14.04 LTS  __Compiler:__
+gcc 4.8.4 (C90).
 
 ## Primary Concepts Learned
 

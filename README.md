@@ -5,7 +5,8 @@
 This Repo has some of my (David John Coleman II) projects for Holberton School.
 The focus of these projects are learning the C Programming Language. Each
 directory contains new projects that specifically address learning new functions
-and tasks in C Language.
+and tasks in C Language.  __Environment:__ Ubuntu 14.04 LTS  __Compiler:__ gcc
+4.8.4 (C90).
 
 ## Directories
 
@@ -121,9 +122,13 @@ and tasks in C Language.
   * When and why using linked lists vs arrays
   * How to build and use linked lists with structs
 
+* 0x13-bit_manipulation
+
+  * How to manipulation bits and use bitwise operators
+
 ## Author
 
-David John Coleman II.	Check out my website http://www.davidjohncoleman.com/
+David John Coleman II.	Check out my website [davidjohncoleman.com](http://www.davidjohncoleman.com/)
 
 ## License
 
