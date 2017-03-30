@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "holberton.h"
-
+#include <limits.h>
 /**
  * main - check the code for Holberton School students.
  *
@@ -8,6 +8,10 @@
  */
 int main(void)
 {
+	print_binary(UINT_MAX);
+	printf("\n");
+	print_binary(-3333333);
+	printf("\n");
     print_binary(0);
     printf("\n");
     print_binary(1);
