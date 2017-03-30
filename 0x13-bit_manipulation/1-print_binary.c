@@ -6,10 +6,10 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int copy = 0, one = 1;
+	unsigned long int copy = 0;
 	int position = (sizeof(unsigned long int) * 8) - 1;
 
-	while ((copy & one) == 0 && position != 0)
+	while ((copy & 1) == 0 && position != 0)
 	{
 		copy = n;
 		copy >>= position--;
@@ -20,6 +20,6 @@ void print_binary(unsigned long int n)
 	{
 		copy = n;
 		copy >>= position--;
-		putchar((copy & one) + '0');
+		putchar((copy & 1) + '0');
 	}
 }
