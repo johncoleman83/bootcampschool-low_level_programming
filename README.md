@@ -126,6 +126,18 @@ and tasks in C Language.  __Environment:__ Ubuntu 14.04 LTS  __Compiler:__ gcc
 
   * How to manipulation bits and use bitwise operators
 
+* 0x14-file_io
+
+  * How to create, open, close, read and write files in C Language
+  * File descriptors
+  * The 3 standard file descriptors, their purpose and their POSIX names
+  * The I/O system calls open, close, read and write
+  * The flags O_RDONLY, O_WRONLY, O_RDWR
+  * File permissions, and setting them when creating a file with the open
+  system call
+  * System calls
+  * Difference between a function and a system call
+
 ## Author
 
 David John Coleman II.	Check out my website [davidjohncoleman.com](http://www.davidjohncoleman.com/)
