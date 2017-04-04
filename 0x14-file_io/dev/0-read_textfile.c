@@ -31,10 +31,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buffer == NULL)
 		return (0);
 	if (read(fd, buffer, letters) == -1)
+	{
+		free(buffer);
 		return (0);
+	}
 	letters2 = _strlen(buffer);
 	letters2 = write(STDOUT_FILENO, buffer, letters2);
 	if (letters2 == -1)
+	{
+		free(buffer);
 		return (0);
+	}
+	free(buffer);
 	return (close(fd) == -1 ? -1 : letters2);
 }
