@@ -1,18 +1,5 @@
 #include "holberton.h"
 /**
- * _strlen - returns string length of input string
- * @s: string to check length of
- * Return: length of string
- */
-int _strlen(char *s)
-{
-	int len = 0;
-
-	while (s[len] != '\0')
-		len++;
-	return (len);
-}
-/**
  * end_func - function that deals with all standard errors
  * @num: exit status number
  * @str: file name either to_file or from_file
