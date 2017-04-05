@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
  * end_func - function that deals with all standard errors
- * @num: exit status number
- * @str: file name either to_file or from_file
- * Return: 97, 98, 99, or 100 based on each case
+ * @num: exit status number or file descriptor
+ * @str: file name either to_file or from_file, or NULL
+ * Return: 97, 98, 99, or 100 depending on input num
  */
 int end_func(int num, char *str)
 {
