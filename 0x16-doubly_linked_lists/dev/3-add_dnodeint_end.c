@@ -1,8 +1,8 @@
 #include "lists.h"
 /**
  * add_dnodeint_end - adds a new node at the end of a dlistint_t list
- * head: head of linked list
- * n: integer to be added to node
+ * @head: head of linked list
+ * @n: integer to be added to node
  *
  * Return: address of new node
  */

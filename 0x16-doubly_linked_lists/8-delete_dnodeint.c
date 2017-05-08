@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * delete_dnodeint_at_index - deletes the node at index
- * h: head of linked list
+ * @h: head of linked list
  *
  * Return: 1 on success -1 on fail
  */
