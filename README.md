@@ -138,6 +138,24 @@ and tasks in C Language.  __Environment:__ Ubuntu 14.04 LTS  __Compiler:__ gcc
   * System calls
   * Difference between a function and a system call
 
+* 0x16-doubly_linked_lists
+
+  * What is a doubly linked list
+  * How to use doubly linked lists
+
+* 0x17-dynamic_libraries
+
+  * What is a dymanic library
+  * how does dynamic lib work
+  * how to create dynamic lib and how to use it
+  * What is the environment variable $LD_LIBRARY_PATH and how to use it
+  * What are the differences between static and shared libraries
+  * Basic usage nm, ldd, ldconfig
+
+* 0x18-stacks_queues_lifo_fifo
+
+  * contains a submodule for monty project: https://github.com/johncoleman83/monty
+
 ## Author
 
 David John Coleman II.	Check out my website [davidjohncoleman.com](http://www.davidjohncoleman.com/)
