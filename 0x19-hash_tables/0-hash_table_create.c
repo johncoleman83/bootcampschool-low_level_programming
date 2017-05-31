@@ -5,7 +5,8 @@
  * @size: size of hash table
  *
  * Return: pointer to hash table
- */hash_table_t *hash_table_create(unsigned long int size)
+ */
+hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *ht;
 	hash_node_t *s;
