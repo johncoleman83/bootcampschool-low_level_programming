@@ -1,6 +1,24 @@
 #ifndef _HASH_TABLES_H_
 #define _HASH_TABLES_H_
 
+/* ----- c std lib headers ----- */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <limits.h>
+#include <string.h>
+#include <ctype.h>
+
+/* ----- macros ----- */
+
+#define TRUE (1 == 1)
+#define FALSE (!TRUE)
+#define BUFSIZE 1024
+
 /* ----- Structs ----- */
 /**
  * struct hash_node_s - Node of a hash table
@@ -34,3 +52,5 @@ typedef struct hash_table_s
 /* ----- Hash Table ----- */
 
 hash_table_t *hash_table_create(unsigned long int size);
+
+#endif
