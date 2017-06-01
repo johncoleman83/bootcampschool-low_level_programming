@@ -11,14 +11,32 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int hash, index, i, size;
+	hash_node_t *node, *new_node;
 
 	if (!ht || !key)
 		return (EXIT_FAILURE);
 
 	size = ht->size;
 	hash = hash_djb2(key);
-	index = hash / size;
 
-	while (i < size)
-    return (EXIT_SUCCESS);
+	index = hash % size;
+
+	if (!ht->array[index])
+	{
+		node = malloc(sizeof(hash_node_t *));
+		node->key = strdup(key);
+		node->value = strdup(value);
+		ht->array[index] = node;
+	}
+	else
+	{
+		new_node = malloc(sizeof(hash_node_t *));
+		if (!new_node)
+			return (EXIT_FAILURE);
+		new_node->key = strdup(key);
+		new_node->value = strdup(value);
+		new_node->next = node;
+		ht->array[index] = new_node;
+	}
+	return (EXIT_SUCCESS);
 }
