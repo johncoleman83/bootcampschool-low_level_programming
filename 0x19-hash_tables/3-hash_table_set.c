@@ -11,31 +11,40 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int idx;
-	hash_node_t *node, *new_node;
+	hash_node_t *node, *temp, *new_node;
 
 	if (!ht || !key || !key || strlen(key) == 0)
 		return (EXIT_FAILURE);
 
 	idx = key_index((const unsigned char *)key, ht->size);
 	node = ht->array[idx];
-	if (node && !strcmp(node->key, key))
+	if (node)
 	{
-		free(node->value);
-		node->value = strdup(value);
+		temp = node;
+		while (temp)
+		{
+			if (!strcmp(temp->key, key))
+			{
+				free(temp->value);
+				temp->value = strdup(value);
+				if (!temp->value)
+					return (EXIT_FAILURE);
+				return (EXIT_SUCCESS);
+			}
+			temp = temp->next;
+		}
 	}
-	else
-	{
-		new_node = malloc(sizeof(hash_node_t));
-		if (!new_node)
-			return (EXIT_FAILURE);
-		new_node->key = strdup(key);
-		if (!new_node->key)
-			return (EXIT_FAILURE);
-		new_node->value = strdup(value);
-		if (!new_node->value)
-			return (EXIT_FAILURE);
-		new_node->next = node;
-		ht->array[idx] = new_node;
-	}
+	new_node = malloc(sizeof(hash_node_t));
+	if (!new_node)
+		return (EXIT_FAILURE);
+	new_node->key = strdup(key);
+	if (!new_node->key)
+		return (EXIT_FAILURE);
+	new_node->value = strdup(value);
+	if (!new_node->value)
+		return (EXIT_FAILURE);
+	new_node->next = node;
+	ht->array[idx] = new_node;
+
 	return (EXIT_SUCCESS);
 }
