@@ -20,12 +20,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node = ht->array[idx];
 	if (node && !strcmp(node->key, key))
 	{
+		while (node && strcmp(node->key, key))
+			node = node->next;
 		free(node->value);
 		node->value = strdup(value);
 	}
 	else
 	{
-		new_node = malloc(sizeof(hash_node_t *));
+		new_node = malloc(sizeof(hash_node_t));
 		if (!new_node)
 			return (EXIT_FAILURE);
 		new_node->key = strdup(key);
