@@ -9,7 +9,6 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *ht;
-	hash_node_t *s;
 
 	if (!size)
 		return (NULL);
@@ -18,13 +17,12 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (!ht)
 		return (NULL);
 
-	s = calloc(size, sizeof(hash_node_t *));
-	if (!s)
+	ht->array = calloc(size, sizeof(hash_node_t *));
+	if (!ht->array)
 	{
 		free(ht);
 		return (NULL);
 	}
-	ht->array = &s;
 	ht->size = size;
 
 	return (ht);
