@@ -29,13 +29,10 @@ void hash_table_print(const hash_table_t *ht)
 					putchar('{');
 					start = 0, comma = 1;
 				}
-				if (node->next)
+				while (node->next)
 				{
-					while (node->next)
-					{
-						printf("'%s': '%s', ", node->key, node->value);
-						node = node->next;
-					}
+					printf("'%s': '%s', ", node->key, node->value);
+					node = node->next;
 				}
 				printf("'%s': '%s'", node->key, node->value);
 			}
