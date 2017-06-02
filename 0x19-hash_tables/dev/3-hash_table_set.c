@@ -20,8 +20,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node = ht->array[idx];
 	if (node && !strcmp(node->key, key))
 	{
-			free(node->value);
-			node->value = strdup(value);
+		free(node->value);
+		node->value = strdup(value);
 	}
 	else
 	{
@@ -32,7 +32,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (!new_node->key)
 			return (EXIT_FAILURE);
 		new_node->value = strdup(value);
-	    if (!new_node->value)
+		if (!new_node->value)
 			return (EXIT_FAILURE);
 		new_node->next = node;
 		ht->array[idx] = new_node;
