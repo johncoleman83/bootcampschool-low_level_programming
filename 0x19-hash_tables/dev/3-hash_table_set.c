@@ -29,8 +29,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		while (strncmp(node->key, key, strlen(key)) != 0)
-			node = node->next;
 		if (strncmp(node->key, key, strlen(key) == 0))
 		{
 			free(node->key);
@@ -43,6 +41,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				return (EXIT_FAILURE);
 			new_node->key = strdup(key);
 			new_node->value = strdup(value);
+			new_node->next = node;
 		}
 	}
 	return (EXIT_SUCCESS);

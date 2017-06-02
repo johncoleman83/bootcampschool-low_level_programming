@@ -14,6 +14,7 @@ int main(void)
 
     ht = hash_table_create(1024);
     hash_table_set(ht, "betty", "holberton");
+	printf("new key %s, new val: %s\n", (ht->array[173])->key, (ht->array[173])->value);
 
     return (EXIT_SUCCESS);
 }
