@@ -15,20 +15,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!ht || !key || !key || strlen(key) == 0)
 		return (EXIT_FAILURE);
-
 	idx = key_index((const unsigned char *)key, ht->size);
-	node = ht->array[idx];
+	node = temp = ht->array[idx];
 	if (node)
 	{
-		temp = node;
 		while (temp)
 		{
 			if (!strcmp(temp->key, key))
 			{
 				free(temp->value);
 				temp->value = strdup(value);
-				if (!temp->value)
-					return (EXIT_FAILURE);
 				return (EXIT_SUCCESS);
 			}
 			temp = temp->next;
@@ -39,12 +35,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (EXIT_FAILURE);
 	new_node->key = strdup(key);
 	if (!new_node->key)
+	{
+		free(new_node);
 		return (EXIT_FAILURE);
+	}
 	new_node->value = strdup(value);
 	if (!new_node->value)
+	{
+		free(new_node->key);
+		free(new_node);
 		return (EXIT_FAILURE);
+	}
 	new_node->next = node;
 	ht->array[idx] = new_node;
-
 	return (EXIT_SUCCESS);
 }
