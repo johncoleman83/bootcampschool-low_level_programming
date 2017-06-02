@@ -20,11 +20,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node = ht->array[idx];
 	if (node)
 	{
-		if (strncmp(node->key, key, strlen(key) == 0))
-		{
-			free(node->key);
-			node->value = strdup(value);
-		}
+		free(node->value);
+		node->value = strdup(value);
 	}
 	else
 	{
