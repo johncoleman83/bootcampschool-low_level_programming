@@ -22,12 +22,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	node = (ht->array)[idx];
 
-	while (node)
-	{
-		if (strcmp(node->key, key) == 0)
-			break;
+	while (strcmp(node->key, key))
 		node = node->next;
-	}
 
 	return (node ? node->value : NULL);
 }
