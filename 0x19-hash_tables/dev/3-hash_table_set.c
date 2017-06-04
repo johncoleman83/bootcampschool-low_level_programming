@@ -60,9 +60,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			temp = temp->next;
 		}
 	}
-	new_node = add_hash_node(key, value);
 
+	new_node = add_hash_node(key, value);
+	if (!new_node)
+		return (0);
 	new_node->next = node;
 	ht->array[idx] = new_node;
+
 	return (1);
 }
