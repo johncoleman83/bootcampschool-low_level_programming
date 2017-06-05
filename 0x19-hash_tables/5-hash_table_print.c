@@ -13,9 +13,10 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int i, size;
 	int comma = 0;
 
-	putchar('{');
 	if (ht && ht->array)
 	{
+		putchar('{');
+
 		size = ht->size;
 		i = 0;
 		while (i < size)
@@ -39,6 +40,6 @@ void hash_table_print(const hash_table_t *ht)
 			}
 			i++;
 		}
+		printf("}\n");
 	}
-	printf("}\n");
 }
