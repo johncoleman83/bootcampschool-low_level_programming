@@ -39,4 +39,10 @@ void quick_sort(int *array, size_t size);
 void quick_sort_dup(int wall, int pivot, int *a, size_t s);
 int partition(int wall, int pivot, int *a, size_t s);
 
+
+/* quick sort hoare */
+void quick_sort_hoare(int *array, size_t size);
+void qsh_dup(int wall, int pivot, int *a, size_t s);
+int partition_hoare(int wall, int pivot, int *a, size_t s);
+
 #endif /* SORT_H */
