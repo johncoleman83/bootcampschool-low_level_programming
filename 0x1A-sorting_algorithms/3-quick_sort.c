@@ -60,8 +60,8 @@ void partition(int *wall, int *pivot, int *a, size_t s)
 			end = wall - 1;
 			if (end != start && wall != pivot)
 				end--;
-			partition(start, end, a, s);
 			partition(wall, pivot, a, s);
+			partition(start, end, a, s);
 		}
 	}
 }
