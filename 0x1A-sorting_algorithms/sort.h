@@ -46,6 +46,6 @@ int partition_hoare(int wall, int pivot, int *a, size_t s);
 
 /* shell sort */
 void shell_sort(int *array, size_t size);
-void swap_shell(int check, int prev, int gap, int*a);
+void swap_shell(int check, int prev, int gap, int *a);
 
 #endif /* SORT_H */
