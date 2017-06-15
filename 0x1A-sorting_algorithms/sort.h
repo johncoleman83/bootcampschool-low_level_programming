@@ -36,6 +36,7 @@ void selection_sort(int *array, size_t size);
 
 /* quick sort v. 1 */
 void quick_sort(int *array, size_t size);
-void partition(int *wall, int *pivot, int *a, size_t s);
+void quick_sort_dup(int wall, int pivot, int *a, size_t s);
+int partition(int wall, int pivot, int *a, size_t s);
 
 #endif /* SORT_H */

@@ -7,38 +7,63 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	int *wall, *pivot;
+	int wall, pivot;
 
 	if (array && size > 1)
 	{
-		pivot = array + (size - 1);
-		wall = array;
+		wall = 0;
+		pivot = (size - 1);
 
-		partition(wall, pivot, array, size);
+		quick_sort_dup(wall, pivot, array, size);
 	}
 }
-
 /**
- * partition - recursively (divide & conquer) sorts sub arrays
+ * quick_sort_dup - recursively (divide & conquer) partition and repeat
  * @wall: beginning of sub array to sort
  * @pivot: end of sub array to sort and pivot point
  * @a: the beginning of the array, for printing purposes
  * @s: size of entire array for printing
  */
-void partition(int *wall, int *pivot, int *a, size_t s)
+void quick_sort_dup(int wall, int pivot, int *a, size_t s)
 {
-	int *i, *start, *end;
+	int first_wall, second_wall, new_pivot;
 
-	start = wall;
+	if (wall < pivot)
+	{
+		second_wall = partition(wall, pivot, a, s);
+
+		first_wall = wall;
+		new_pivot = second_wall - 1;
+
+		if (new_pivot != first_wall && second_wall != pivot)
+			new_pivot--;
+
+		quick_sort_dup(first_wall, new_pivot, a, s);
+		quick_sort_dup(second_wall, pivot, a, s);
+	}
+}
+/**
+ * partition - divides and sorts an array into sub arrays semi-sorted
+ * @wall: beginning of array partition
+ * @pivot: end of array to partition
+ * @a: the beginning of the array, for printing purposes
+ * @s: size of entire array for printing
+ *
+ * Return: the new wall barrier
+ */
+int partition(int wall, int pivot, int *a, size_t s)
+{
+	int i;
+
 	i = wall;
 
 	while (i != pivot)
 	{
-		if (*i < *pivot)
+		if (a[i] < a[pivot])
 		{
 			if (i != wall)
 			{
-				swap_int(i, wall);
+				swap_int(a + i, a + wall);
 				print_array(a, s);
 			}
 			i++;
@@ -46,24 +71,17 @@ void partition(int *wall, int *pivot, int *a, size_t s)
 		}
 		else
 			i++;
-		if (i == pivot)
-		{
-			if (wall != pivot)
-			{
-				if (*wall > *pivot)
-				{
-					swap_int(pivot, wall);
-					print_array(a, s);
-				}
-				wall++;
-			}
-			end = wall - 1;
-			if (end != start && wall != pivot)
-				end--;
-			partition(start, end, a, s);
-			partition(wall, pivot, a, s);
-		}
 	}
+	if (wall != pivot)
+	{
+		if (a[wall] > a[pivot])
+		{
+			swap_int(a + pivot, a + wall);
+			print_array(a, s);
+		}
+		wall++;
+	}
+	return (wall);
 }
 
 /**
