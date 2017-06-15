@@ -65,6 +65,7 @@ void partition(int *wall, int *pivot, int *a, size_t s)
 		}
 	}
 }
+
 /**
   * swap_int - swap two integers
   * @a: integer 1
