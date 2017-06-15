@@ -8,27 +8,13 @@
 void quick_sort(int *array, size_t size)
 {
 	int *wall, *pivot;
-	size_t check = 0;
 
 	if (array && size > 1)
 	{
-		while (check + 1 < size)
-		{
-			if (array[check] <= array[check + 1])
-				check++;
-			else
-			{
-				check = 0;
-				break;
-			}
-		}
-		if (!check)
-		{
-			pivot = array + (size - 1);
-			wall = array;
+		pivot = array + (size - 1);
+		wall = array;
 
-			partition(wall, pivot, array, size);
-		}
+		partition(wall, pivot, array, size);
 	}
 }
 

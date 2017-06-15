@@ -29,6 +29,7 @@ void insertion_sort_list(listint_t **list)
 		}
 	}
 }
+
 /**
  * swap_insert - swaps integers with insertion form
  * @pn: previous node of linked list
