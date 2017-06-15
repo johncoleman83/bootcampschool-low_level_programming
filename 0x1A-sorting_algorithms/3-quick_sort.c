@@ -35,7 +35,7 @@ void quick_sort_dup(int wall, int pivot, int *a, size_t s)
 		first_wall = wall;
 		new_pivot = second_wall - 1;
 
-		if (new_pivot != first_wall && second_wall != pivot)
+		if (first_wall != new_pivot && second_wall != pivot)
 			new_pivot--;
 
 		quick_sort_dup(first_wall, new_pivot, a, s);
