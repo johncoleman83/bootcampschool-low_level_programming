@@ -53,4 +53,7 @@ void merge_sort(int *array, size_t size);
 void sort(int start, int end, int *a, int *copy);
 void merge(int start, int end, int *a, int *copy);
 
+/* Counting Sort */
+void counting_sort(int *array, size_t size);
+
 #endif /* SORT_H */
