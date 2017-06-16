@@ -7,41 +7,35 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	int *gaparr, gaps, gap, g;
-	size_t check, prev, sum;
+	int gap, g;
+	size_t check, prev;
+	int gaparr[4] = {
+		40, 13, 4, 1
+	};
 
 	if (array && size > 1)
 	{
-		gaps = 0;
-		for (sum = 1; sum <= size / 2; sum = sum * 3 + 1)
-			gaps++;
-		if (array && size > 1)
+		for (g = 0; gaparr[g] >= (int)size; g++)
+			;
+		prev = 0;
+		gap = gaparr[g];
+		check = prev + gap;
+		while (check < size)
 		{
-			gaparr = malloc(sizeof(int) * gaps);
-
-			for (sum = 1, g = 0; g < gaps; sum = sum * 3 + 1, g++)
-				gaparr[g] = sum;
-			prev = 0;
-			gap = gaparr[--g];
-			check = prev + gap;
-			while (check < size)
+			if (array[check] < array[prev])
+				swap_shell(check, prev, gap, array);
+			prev++;
+			check++;
+			if (check >= size)
 			{
-				if (array[check] < array[prev])
-					swap_shell(check, prev, gap, array);
-				prev++;
-				check++;
-				if (check >= size)
+				print_array(array, size);
+				if (g < 4)
 				{
-					print_array(array, size);
-					if (g != 0)
-					{
-						gap = gaparr[--g];
-						prev = 0;
-						check = prev + gap;
-					}
+					gap = gaparr[++g];
+					prev = 0;
+					check = prev + gap;
 				}
 			}
-			free(gaparr);
 		}
 	}
 }
