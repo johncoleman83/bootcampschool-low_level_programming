@@ -1,7 +1,7 @@
 CC=gcc
 SRC=holberton.c main.c
 NAME=holberton
-OBJ=$(SRC:%.c=%.o)
+OBJ=$(patsubst %.c,%.o,$(SRC))
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
