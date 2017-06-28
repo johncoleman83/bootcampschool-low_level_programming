@@ -1,0 +1,27 @@
+# Makefile to compile C program, with Warnings, and clean up
+CC=gcc
+SRC=holberton.c main.c
+NAME=holberton
+OBJ=$(patsubst %.c,%.o,$(SRC))
+RM=rm -f
+CFLAGS=-Wall -Werror -Wextra -pedantic
+
+all: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+clean:
+ifneq ("$(wildcard *~)","")
+	$(RM) *~
+endif
+ifneq ("$(wildcard $(NAME))","")
+	$(RM) $(NAME)
+endif
+
+oclean:
+ifneq ("$(wildcard $(OBJ))","")
+	$(RM) $(OBJ)
+endif
+
+fclean: clean oclean
+
+re: fclean all
