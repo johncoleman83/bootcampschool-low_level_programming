@@ -35,6 +35,8 @@ void sort_deck(deck_node_t **deck)
  * swap_cards - swaps cards with insertion sort fasion
  * @pn: the previous node to swap
  * @tmp: the temporary node to swap with previous
+ * @nn: the next node
+ * @deck: the head of deck
  */
 void swap_cards(deck_node_t *pn, deck_node_t *tmp, deck_node_t *nn,
 				deck_node_t **deck)
@@ -75,7 +77,7 @@ void swap_cards(deck_node_t *pn, deck_node_t *tmp, deck_node_t *nn,
  */
 int gtr(const char *pval, const char *tval)
 {
-	char *values[] = {
+	static const char * const values[] = {
 		"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 		"Jack", "Queen", "King", NULL
 	};
