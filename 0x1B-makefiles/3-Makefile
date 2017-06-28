@@ -1,0 +1,32 @@
+# VARIABLES
+CC=gcc
+SRC=holberton.c main.c
+NAME=holberton
+OBJ=$(patsubst %.c,%.o,$(SRC))
+RM=rm -f
+
+# RULES
+# builds executable
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+# deletes the Emacs temporary files and the executable
+clean:
+ifneq ("$(wildcard *~)","")
+	$(RM) *~
+endif
+ifneq ("$(wildcard $(NAME))","")
+	$(RM) $(NAME)
+endif
+
+# deletes the object files
+oclean:
+ifneq ("$(wildcard $(OBJ))","")
+	$(RM) $(OBJ)
+endif
+
+# deletes the Emacs temporary files, the executable, and the object files
+fclean: clean oclean
+
+# forces recompilation of all source files
+re: fclean all
