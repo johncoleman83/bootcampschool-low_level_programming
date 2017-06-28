@@ -7,7 +7,7 @@ RM=rm -f
 CFLAGS=-Wall -Werror -Wextra -pedantic
 
 all: $(OBJ)
-ifneq ("$(wildcard *.h","")
+ifneq ("$(wildcard *.h)","")
 	$(CC) -Wall -Werror -Wextra -pedantic $(OBJ) -o $(NAME)
 endif
 
