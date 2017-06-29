@@ -3,7 +3,7 @@ CC=gcc
 SRC=holberton.c main.c
 NAME=holberton
 OBJ=$(patsubst .c,.o,$(SRC))
-RM=rm -f
+RM=
 CFLAGS=-Wall -Werror -Wextra -pedantic
 
 all: $(OBJ)
