@@ -7,18 +7,14 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	int gap, g;
+	int gap;
 	size_t check, prev;
-	int gaparr[4] = {
-		40, 13, 4, 1
-	};
 
 	if (array && size > 1)
 	{
-		for (g = 0; gaparr[g] >= (int)size; g++)
+		for (gap = 1; gap * 3 + 1 < (int)size; gap = gap * 3 + 1)
 			;
 		prev = 0;
-		gap = gaparr[g];
 		check = prev + gap;
 		while (check < size)
 		{
@@ -29,9 +25,9 @@ void shell_sort(int *array, size_t size)
 			if (check >= size)
 			{
 				print_array(array, size);
-				if (g < 4)
+				if (gap > 1)
 				{
-					gap = gaparr[++g];
+					gap = (gap - 1) / 3;
 					prev = 0;
 					check = prev + gap;
 				}
