@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-
 /**
  * binary_tree_node - inserts new leaf node in binary tree based on given
  * parent, with left and right nodes of new leaf node having NULL value

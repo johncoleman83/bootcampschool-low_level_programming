@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-
 /**
  * binary_tree_insert_left - inserts new leaf_node into left child of parent
  * @parent: the parent node to add a leaf_node to
