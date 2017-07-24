@@ -17,7 +17,7 @@ __Environment:__ Ubuntu 14.04 LTS  __Compiler:__ gcc 4.8.4 (C90).
 
 ## Author
 
-David John Coleman II.	Check out my website [davidjohncoleman.com](http://www.davidjohncoleman.com/)
+David John Coleman II, [davidjohncoleman.com](http://www.davidjohncoleman.com/)
 
 ## License
 

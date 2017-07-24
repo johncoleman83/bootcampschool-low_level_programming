@@ -8,6 +8,7 @@ The focus of these projects is learning Hash Tables in C Programming Language.
 * __Environment:__ `Ubuntu 14.04 LTS`
 * __Compiler:__ `gcc 4.8.4 (C90)`
 * __Make:__ `GNU Make 3.81`
+* __Language:__ C, make
 
 ## Primary Concepts Learned
 
@@ -20,7 +21,7 @@ The focus of these projects is learning Hash Tables in C Programming Language.
 
 ## Author
 
-David John Coleman II.	Check out my website [davidjohncoleman.com](http://www.davidjohncoleman.com/)
+David John Coleman II, [davidjohncoleman.com](http://www.davidjohncoleman.com/)
 
 ## License
 

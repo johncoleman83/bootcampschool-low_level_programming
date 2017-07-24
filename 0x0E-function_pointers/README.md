@@ -13,7 +13,7 @@ The focus of these projects is learning the C Programming Language.
 
 ## Author
 
-David John Coleman II.	Check out my website http://www.davidjohncoleman.com/
+David John Coleman II, http://www.davidjohncoleman.com/
 
 ## License
 
