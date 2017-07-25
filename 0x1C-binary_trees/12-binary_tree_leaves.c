@@ -2,6 +2,8 @@
 /**
  * binary_tree_leaves - calculates the number of leaves in a binary tree
  * @tree: the binary tree to check if there are leaves in it
+ *
+ * Return: the number of leaves
  */
 size_t binary_tree_leaves(const binary_tree_t *tree)
 {
