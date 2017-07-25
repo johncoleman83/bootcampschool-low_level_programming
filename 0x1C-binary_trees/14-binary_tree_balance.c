@@ -25,7 +25,7 @@ size_t bt_height(const binary_tree_t *tree)
  *
  * Return: height of binary tree in size_t type
  */
-int binary_tree_balance(const binary_tree_t *tree);
+int binary_tree_balance(const binary_tree_t *tree)
 {
 	int balance = 0;
 	size_t r, l;
