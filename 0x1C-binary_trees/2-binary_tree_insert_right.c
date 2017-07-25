@@ -13,7 +13,6 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 	if (parent)
 	{
 		leaf_right_node = parent->right;
-
 		leaf_node = malloc(sizeof(binary_tree_t) * 1);
 
 		if (leaf_node)
@@ -29,6 +28,5 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 	}
 	else
 		leaf_node = NULL;
-
 	return (leaf_node);
 }
