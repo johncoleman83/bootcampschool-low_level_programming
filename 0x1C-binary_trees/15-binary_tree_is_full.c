@@ -25,5 +25,5 @@ size_t asym_node(const binary_tree_t *tree)
  */
 int binary_tree_is_full(const binary_tree_t *tree)
 {
-	return (asym_node(tree) == 0);
+	return (tree && asym_node(tree) == 0);
 }
