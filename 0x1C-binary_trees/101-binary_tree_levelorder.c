@@ -60,7 +60,7 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 	bt_queue_t *queue = NULL;
 	const binary_tree_t *bt_node;
 
-	if (tree)
+	if (tree && func)
 	{
 		push_queue(&queue, tree);
 		while (queue)
