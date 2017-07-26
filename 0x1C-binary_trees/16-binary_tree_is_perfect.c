@@ -1,17 +1,21 @@
 #include "binary_trees.h"
 /**
- * bth - returns height of a binary tree
+ * bthp - returns height of a binary tree
  * @tree: root of binary tree to find the height of
  *
  * Return: height of binary tree in size_t type
  */
-int bth(const binary_tree_t *tree)
+size_t bthp(const binary_tree_t *tree)
 {
-	int r, l;
+	size_t r, l, height = 0;
 
-	r = tree ? bth(tree->right) + 1 : -1;
-	l = tree ? bth(tree->left) + 1 : -1;
-	return (r > l ? r : l);
+	if (tree)
+	{
+		r = tree->right ? bthp(tree->right) + 1 : 0;
+		l = tree->left ? bthp(tree->left) + 1 : 0;
+		height += (r > l ? r : l);
+	}
+	return (height);
 }
 /**
  * binary_tree_is_perfect - checks if a binary tree is perfect, meaning
@@ -27,8 +31,8 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	if (tree)
 	{
-		l = bth(tree->left);
-		r = bth(tree->right);
+		l = bthp(tree->left);
+		r = bthp(tree->right);
 		balanced = (l == r);
 		if (balanced)
 		{
