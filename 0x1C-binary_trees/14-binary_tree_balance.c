@@ -1,9 +1,10 @@
 #include "binary_trees.h"
 /**
- * bthb - returns height of a binary tree
+ * bthb - returns height of a binary tree + 1, so leaves have height 1, and
+ * NULL value is distinguishable from root leaf node
  * @tree: root of binary tree to find the height of
  *
- * Return: height of binary tree in size_t type
+ * Return: height of binary tree in size_t type + 1
  */
 size_t bthb(const binary_tree_t *tree)
 {
