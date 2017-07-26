@@ -2,24 +2,24 @@
 /**
  * is_descendant - checks if input offspring is descendant of root
  * @root: root to check for descendants
- * @offspring: offspring to check if it's a descendant
+ * @chld: offspring to check if it's a descendant
  *
  * Return: 1 if is descendant, 0 if not or error
  */
-int is_descendant(const binary_tree_t *root, const binary_tree_t *offspring)
+int is_descendant(const binary_tree_t *root, const binary_tree_t *chld)
 {
-	int descendant = 0;
+	int desc = 0;
 
 	if (root)
 	{
-		descendant = (root->right == offspring || root->left == offspring);
-		if (!descendant)
+		desc = ((root == chld) || (root->right == chld || root->left == chld));
+		if (!desc)
 		{
-			descendant += is_descendant(root->right, offspring);
-			descendant += is_descendant(root->left, offspring);
+			desc += is_descendant(root->right, chld);
+			desc += is_descendant(root->left, chld);
 		}
 	}
-	return (descendant);
+	return (desc);
 }
 /**
  * binary_trees_ancestor - seeks for lowest common ancestor
@@ -31,7 +31,7 @@ int is_descendant(const binary_tree_t *root, const binary_tree_t *offspring)
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 				     const binary_tree_t *second)
 {
-	while (first && second)
+	while (first || second)
 	{
 		if (is_descendant(first, second))
 			return ((binary_tree_t *)first);
