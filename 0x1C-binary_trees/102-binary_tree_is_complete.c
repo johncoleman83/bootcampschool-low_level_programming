@@ -1,36 +1,26 @@
 #include "binary_trees.h"
 /**
- * btl - traverses binary tree recursively, in level-order skipping root
- * @tree: the binary tree to parse
- * @func: the function to implement on the n int of each node
+ * btp - binary tree nodes using pre-order traversal
+ * @tree: the tree to parse through
+ * @func: pointer to function to pass value of node to
  */
-void btl(const binary_tree_t *tree, void (*func)(int))
+int btp(const binary_tree_t *tree, size_t height)
 {
+	int complete = 1;
+
 	if (tree)
 	{
-		if (tree->left)
-			func(tree->left->n);
-		if (tree->right)
-			func(tree->right->n);
-		btl(tree->left, func);
-		btl(tree->right, func);
+		if (!tree->left && !tree->right)
+			complete = check_depth(tree, height);
+		else
+		{
+			if (tree->left)
+			return (btp(tree->left, height);
+			btp(tree->right, height);
+		}
 	}
 }
-/**
- * binary_tree_levelorder - prints root and begins traversing
- * @tree: the binary tree to parse
- * @func: the function to implement on the n int of each node
- */
-void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
-{
-	if (tree)
-	{
-		func(tree->n);
-		btl(tree, func);
-	}
-}
-#include "binary_trees.h"
-/**
+	/**
  * bthb - returns height of a binary tree + 1, so leaves have height 1, and
  * NULL value is distinguishable from root leaf node
  * @tree: root of binary tree to find the height of
@@ -70,6 +60,59 @@ int binary_tree_balance(const binary_tree_t *tree)
 	return (balance);
 }
 /**
+ * bthc - returns height of a binary tree
+ * @tree: root of binary tree to find the height of
+ *
+ * Return: height of binary tree in size_t type
+ */
+size_t bthc(const binary_tree_t *tree)
+{
+	size_t r, l, height = 0;
+
+	if (tree)
+	{
+		r = tree->right ? bthc(tree->right) + 1 : 0;
+		l = tree->left ? bthc(tree->left) + 1 : 0;
+		height += (r > l ? r : l);
+	}
+	return (height);
+}
+/**
+ * bt_depth - returns depth of input node
+ * @node: input node to check the depth of
+ *
+ * Return: depth of the input node
+ */
+size_t bt_depth(const binary_tree_t *node)
+{
+	size_t depth = 0;
+
+	if (node)
+		while (node->parent)
+			depth++, node = node->parent;
+
+	return (depth);
+}
+int check_depth(const binary_tree_t *bt_node, size_t height)
+{
+	size_t depth;
+	static int flag = 0;
+
+	depth = bt_depth(bt_node);
+
+	if (depth < height - 1)
+		return (0);
+	else if (flag && depth == height)
+		return (0);
+	else if (depth < height)
+	{
+		flag = 1;
+		return (1);
+	}
+	else
+		return (1);
+}
+/**
  * binary_tree_is_complete - checks if binary tree is complete
  * @tree: the binary tree to check
  *
@@ -77,6 +120,12 @@ int binary_tree_balance(const binary_tree_t *tree)
  */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
-	check balance factor of every node, if all are 0 or +1, gtg.
-	return ();
+	size_t height;
+
+	if (tree)
+	{
+		height = bthc(tree);
+
+		btp(tree, height);
+	}
 }
