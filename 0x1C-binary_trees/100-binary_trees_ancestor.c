@@ -29,7 +29,7 @@ int is_descendant(const binary_tree_t *root, const binary_tree_t *offspring)
  * Return: the node to the common ancestor
  */
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
-									 const binary_tree_t *second)
+				     const binary_tree_t *second)
 {
 	while (first && second)
 	{
