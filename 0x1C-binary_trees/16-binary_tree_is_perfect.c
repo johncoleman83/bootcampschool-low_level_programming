@@ -19,15 +19,15 @@ size_t bthb(const binary_tree_t *tree)
 	return (height);
 }
 /**
- * binary_tree_is_perfect - checks if a binary tree is perfect, meaning
+ * bt_p - checks if a binary tree is perfect, meaning
  * perfectly symetrical
  * @tree: the input binary tree to check if it's perfect
  *
- * Return: 1 if perfect, 0 if not or failure
+ * Return: 1 if perfect, 0 if not
  */
-int binary_tree_is_perfect(const binary_tree_t *tree)
+int bt_p(const binary_tree_t *tree)
 {
-	int balanced = 1;
+	int balanced;
 	size_t r, l;
 
 	if (tree)
@@ -37,9 +37,25 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 		balanced = (l == r);
 		if (balanced)
 		{
-			balanced -= binary_tree_is_perfect(tree->left) ? 0 : 1;
-			balanced -= binary_tree_is_perfect(tree->right) ? 0 : 1;
+			balanced -= bt_p(tree->left) ? 0 : 1;
+			balanced -= bt_p(tree->right) ? 0 : 1;
 		}
 	}
+	else
+		balanced = 1;
 	return (balanced < 1 ? 0 : 1);
+}
+/**
+ * binary_tree_is_perfect - checks if a binary tree is perfect, meaning
+ * perfectly symetrical
+ * @tree: the input binary tree to check if it's perfect
+ *
+ * Return: 1 if perfect, 0 if not or failure
+ */
+int binary_tree_is_perfect(const binary_tree_t *tree)
+{
+	if (tree)
+		return (bt_p(tree));
+	else
+		return (0);
 }
