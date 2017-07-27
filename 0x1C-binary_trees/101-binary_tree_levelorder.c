@@ -3,8 +3,6 @@
  * push_queue - adds new binary tree node to end of queue FIFO method
  * @queue: the queue to add to
  * @bt_node: the binary tree node to add to the end of the queue
- *
- * Return: returns pointer to the newnode or NULL on failure
  */
 void push_queue(bt_queue_t **queue, const binary_tree_t *bt_node)
 {
