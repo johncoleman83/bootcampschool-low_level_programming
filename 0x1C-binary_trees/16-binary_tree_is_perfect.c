@@ -50,16 +50,14 @@ size_t power_of(size_t x, size_t y)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	size_t height, size, check, exponent;
+	size_t height, size, check;
 
 	if (tree)
 	{
 		height = bth(tree);
 		size = bt_size(tree);
-		check = exponent = 0;
 
-		while (exponent <= height)
-			check += power_of(2, exponent++);
+		check = power_of(2, height + 1) - 1;
 	}
 	return (tree && check == size);
 }
