@@ -64,7 +64,7 @@ int bst_push_queue(bt_queue_t **queue, const binary_tree_t *bt_node)
  */
 int bst(bt_queue_t **queue, const binary_tree_t *tree)
 {
-	static int check = 1 - 1;
+	int check = 0;
 
 	if (tree)
 	{
