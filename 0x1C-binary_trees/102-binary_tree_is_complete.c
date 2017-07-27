@@ -11,7 +11,7 @@ size_t bt_size(const binary_tree_t *tree)
 
 	if (tree)
 		size += (bt_size(tree->right) +
-				 bt_size(tree->left) + 1);
+			 bt_size(tree->left) + 1);
 	return (size);
 }
 /**
@@ -25,8 +25,8 @@ size_t bt_size(const binary_tree_t *tree)
 int bt_c(const binary_tree_t *n, size_t i, size_t s)
 {
 	return (!n ? 1 : (i < s &&
-					  bt_c(n->left, 2 * i + 1, s) &&
-					  bt_c(n->right, 2 * i + 2, s)));
+			  bt_c(n->left, 2 * i + 1, s) &&
+			  bt_c(n->right, 2 * i + 2, s)));
 }
 /**
  * binary_tree_is_complete - checks if binary tree is complete
