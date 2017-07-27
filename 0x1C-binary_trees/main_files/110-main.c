@@ -29,5 +29,6 @@ int main(void)
     binary_tree_print(root);
     bst = binary_tree_is_bst(root);
     printf("Is %d bst: %d\n", root->n, bst);
+    binary_tree_delete(root);
     return (0);
 }

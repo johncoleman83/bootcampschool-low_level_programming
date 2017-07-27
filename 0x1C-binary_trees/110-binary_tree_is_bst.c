@@ -41,7 +41,11 @@ int bst_push_queue(bt_queue_t **queue, const binary_tree_t *bt_node)
 			else
 			{
 				if ((*queue)->node->n >= bt_node->n)
+				{
+					free(new_node);
+					bst_pop_queue(queue);
 					return (1);
+				}
 				(*queue)->next = new_node;
 				bst_pop_queue(queue);
 			}
@@ -60,9 +64,8 @@ int bst_push_queue(bt_queue_t **queue, const binary_tree_t *bt_node)
  */
 int bst(bt_queue_t **queue, const binary_tree_t *tree)
 {
-	static int check = 1;
+	static int check = 1 - 1;
 
-	check--;
 	if (tree)
 	{
 		check += bst(queue, tree->left);
@@ -80,13 +83,9 @@ int bst(bt_queue_t **queue, const binary_tree_t *tree)
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
 	bt_queue_t *queue = NULL;
-	int check = 0;
+	int check;
 
-	if (tree)
-	{
-		check = bst(&queue, tree);
-		bst_pop_queue(&queue);
-		check = check ? 0 : 1;
-	}
-	return (check);
+	check = bst(&queue, tree);
+	bst_pop_queue(&queue);
+	return (tree && !check);
 }
