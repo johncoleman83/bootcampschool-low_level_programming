@@ -15,7 +15,7 @@ int btp(const binary_tree_t *tree, size_t height)
 		else
 		{
 			if (tree->left)
-			return (btp(tree->left, height);
+				return (btp(tree->left, height);
 			btp(tree->right, height);
 		}
 	}
@@ -113,6 +113,25 @@ int check_depth(const binary_tree_t *bt_node, size_t height)
 		return (1);
 }
 /**
+ * binary_tree_size - calculates the size of a binary tree
+ * @tree: the root of tree to measure the size of
+ *
+ * Return: the size of the binary tree
+ */
+size_t binary_tree_size(const binary_tree_t *tree)
+{
+	size_t r, l, size = 0;
+
+	if (tree)
+	{
+		r = binary_tree_size(tree->right);
+		l = binary_tree_size(tree->left);
+		size += (r + l + 1);
+	}
+
+	return (size);
+}
+/**
  * binary_tree_is_complete - checks if binary tree is complete
  * @tree: the binary tree to check
  *
@@ -120,12 +139,14 @@ int check_depth(const binary_tree_t *bt_node, size_t height)
  */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
-	size_t height;
+	size_t height, size, z;
 
 	if (tree)
 	{
 		height = bthc(tree);
 
+		size = binary_tree_size(tree);
+		
 		btp(tree, height);
 	}
 }
