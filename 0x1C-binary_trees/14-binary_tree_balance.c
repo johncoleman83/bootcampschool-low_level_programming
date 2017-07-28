@@ -23,7 +23,7 @@ size_t bt_height(const binary_tree_t *tree)
  * that is, the height of tree->left - height of tree->right
  * @tree: root of binary tree to find the balance factor
  *
- * Return: height of binary tree in size_t type
+ * Return: 1 if balanced, 0 if not or on failure
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {

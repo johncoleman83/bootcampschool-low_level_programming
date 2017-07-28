@@ -19,11 +19,12 @@ size_t bt_height(const binary_tree_t *tree)
 	return (height);
 }
 /**
- * bt_balance - returns balance factor of every node of binary tree
- * that is, the height of tree->left - height of tree->right
+ * bt_balance - modified balance factor function that returns 1 or more if
+ * any node in the tree has a balance factor with absolute value > 1. where
+ * balance factor is the height of tree->left - height of tree->right
  * @node: root of binary tree to find the balance factor
  *
- * Return: height of binary tree in size_t type
+ * Return: 0 if balanced, non-0 if not
  */
 int bt_balance(const binary_tree_t *node)
 {
