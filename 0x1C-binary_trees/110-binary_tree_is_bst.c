@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-#define VALID 1
 /**
  * bst - traverses binary tree with inorder functionality, checking previoius
  * minimum and maximum values, comparing each one along the way
@@ -12,15 +11,16 @@
 int bst(const binary_tree_t *node, const binary_tree_t *min,
 	const binary_tree_t *max)
 {
-	int valid = VALID;
+	int valid = 1;
 
 	if (node)
 	{
-		valid = min ? min->n < node->n : (max ? max->n > node->n : 1);
+		valid = min ? min->n < node->n : 1;
+		valid = valid && (max ? max->n > node->n : 1);
 		valid = valid && (bst(node->left, min, node) &&
 				  bst(node->right, node, max));
 	}
-	return (valid == VALID);
+	return (valid);
 }
 /**
  * binary_tree_is_bst - checks if binary tree is proper/ valid binary search
