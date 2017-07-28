@@ -19,18 +19,6 @@ size_t bt_height(const binary_tree_t *tree)
 	return (height);
 }
 /**
- * _abs - returns the absolute value of the input number
- * @num: the input number
- *
- * Return: the absolute value of the input number
- */
-int _abs(int num)
-{
-	if (num < 0)
-		num *= -1;
-	return (num);
-}
-/**
  * bt_balance - returns balance factor of every node of binary tree
  * that is, the height of tree->left - height of tree->right
  * @node: root of binary tree to find the balance factor
