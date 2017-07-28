@@ -36,7 +36,7 @@ int bt_balance(const binary_tree_t *node)
 		balance += (bal < 0 ? bal * -1 : bal) > 1;
 		balance += bt_balance(node->left) + bt_balance(node->right);
 	}
-	return (bal);
+	return (balance);
 }
 /**
  * bst - traverses binary tree with inorder functionality, and running 3
