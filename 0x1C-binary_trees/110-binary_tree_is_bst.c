@@ -1,7 +1,8 @@
 #include "binary_trees.h"
 /**
- * bst - traverses binary tree with inorder functionality, checking previoius
- * minimum and maximum values, comparing each one along the way
+ * bst - traverses binary tree with inorder functionality, and running 3
+ * checks on each node.  Checks if minimum and maximum values are valid
+ * and, checks the recursive calls to the same function are valid
  * @node: the node to be compared
  * @min: the minimum value to be checked with current node
  * @max: the maximum value to be checked with current node
