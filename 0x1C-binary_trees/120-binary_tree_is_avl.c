@@ -61,19 +61,16 @@ int bt_balance(const binary_tree_t *node)
 int bst(const binary_tree_t *node, const binary_tree_t *min,
 	const binary_tree_t *max)
 {
-	int valid;
+	int valid = 1, checks = 0;
 
 	if (node)
 	{
-		if ((min && min->n >= node->n) ||
-		    (max && max->n <= node->n))
-			valid = 0;
-		else
-			valid = (bst(node->left, min, node) &&
-				 bst(node->right, node, max));
+		checks += min ? min->n < node->n : 1;
+		checks += max ? max->n > node->n : 1;
+		checks += (bst(node->left, min, node) &&
+			   bst(node->right, node, max));
+		valid = checks == 3;
 	}
-	else
-		valid = 1;
 	return (valid);
 }
 /**
