@@ -11,14 +11,15 @@
 int bst(const binary_tree_t *node, const binary_tree_t *min,
 	const binary_tree_t *max)
 {
-	int valid = 1;
+	int valid = 1, checks = 0;
 
 	if (node)
 	{
-		valid = min ? min->n < node->n : 1;
-		valid = valid && (max ? max->n > node->n : 1);
-		valid = valid && (bst(node->left, min, node) &&
-				  bst(node->right, node, max));
+		checks += min ? min->n < node->n : 1;
+		checks += max ? max->n > node->n : 1;
+		checks += (bst(node->left, min, node) &&
+			   bst(node->right, node, max));
+		valid = checks == 3;
 	}
 	return (valid);
 }
