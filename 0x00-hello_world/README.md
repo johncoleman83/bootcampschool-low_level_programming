@@ -29,4 +29,4 @@ David John Coleman II.	Check out my website http://www.davidjohncoleman.com/
 
 ## License
 
-Public Domain, no copyright protection
+MIT License

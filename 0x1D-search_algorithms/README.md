@@ -22,4 +22,4 @@ This project is about search algorithms & space & time complexity
 
 ## License
 
-Public Domain, no copyright protection
+MIT License

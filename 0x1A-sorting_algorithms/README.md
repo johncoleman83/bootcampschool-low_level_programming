@@ -24,4 +24,4 @@ Big O notation
 
 ## License
 
-Public Domain, no copyright protection
+MIT License
