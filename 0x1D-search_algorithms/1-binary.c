@@ -50,13 +50,8 @@ int _bs(int *array, size_t min, size_t max, int value)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	size_t min, max;
-
-	min = 0;
-	max = size ? size - 1 : 0;
-
 	if (array && size)
-		return (_bs(array, min, max, value));
+		return (_bs(array, 0, size - 1, value));
 	else
 		return (-1);
 }

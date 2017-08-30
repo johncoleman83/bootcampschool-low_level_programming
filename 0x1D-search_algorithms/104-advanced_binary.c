@@ -57,13 +57,8 @@ int _abs(int *array, size_t min, size_t max, int value)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	size_t min, max;
-
-	min = 0;
-	max = size ? size - 1 : 0;
-
 	if (array && size)
-		return (_abs(array, min, max, value));
+		return (_abs(array, 0, size - 1, value));
 	else
 		return (-1);
 }
