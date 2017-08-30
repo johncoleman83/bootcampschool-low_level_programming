@@ -31,13 +31,8 @@ int _abs(int *array, size_t min, size_t max, int value)
 
 	print_array(array, min, max);
 	mid = min + ((max - min) / 2);
-	if (value == array[mid])
-	{
-		if (array[mid - 1] == value)
-			return (_abs(array, min, mid, value));
-		else
-			return (mid);
-	}
+	if (value == array[mid] && value != array[mid - 1])
+		return (mid);
 	if (min == max || max == 0)
 		return (-1);
 
