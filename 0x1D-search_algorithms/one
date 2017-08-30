@@ -1,0 +1,63 @@
+$ ./1-binary 
+Searching in array: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+new mid: 4, new size: 5
+
+Searching in array: 0, 1, 2, 3, 4
+Found 2 at index: 2
+
+Searching in array: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+new mid: 4, new size: 5
+
+Searching in array: 0, 1, 2, 3, 4
+
+new mid: 2, new size: 3
+
+Searching in array: 0, 1, 2
+
+new mid: 1, new size: 2
+
+Searching in array: 0, 1
+
+new mid: 0, new size: 1
+
+Searching in array: 0
+
+new mid: 0, new size: 0
+
+Found -5 at index: -1
+
+Searching in array: 0, 1, 2, 3
+
+new mid: 1, new size: 2
+
+Searching in array: 2, 3
+
+new mid: 0, new size: 1
+
+Searching in array: 3
+
+new mid: 0, new size: 0
+
+Found 5 at index: -1
+
+Searching in array: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+new mid: 4, new size: 5
+
+Searching in array: 5, 6, 7, 8, 9
+
+new mid: 2, new size: 2
+
+Searching in array: 8, 9
+
+new mid: 0, new size: 1
+
+Searching in array: 9
+
+new mid: 0, new size: 0
+
+Found 999 at index: -1
+Check NULL: (nil) -1
+Check size of 0 -1

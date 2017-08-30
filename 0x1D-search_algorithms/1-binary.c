@@ -19,20 +19,18 @@ void print_array(int *array, size_t size)
 /**
  * find_size - finds the new size of array
  * @size: the size of array
- * @compare: next array is either greater than or less than the check value
+ * @mid: the middle that was checked
+ * @val_is_greater: 1 or TRUE if val is greater than middle integer
  *
  * Return: the new size
  */
-size_t find_size(size_t size, int compare)
+size_t find_size(size_t size, size_t mid, int val_is_greater)
 {
-	if (size % 2 == 0)
-		return (size / 2);
-	if (compare > 0)
-		return (size / 2);
-	else if (size > 1)
-		return ((size / 2) + 1);
-	else
+	if (size <= 1)
 		return (0);
+	if (val_is_greater && size % 2 != 0)
+		return (mid);
+	return (mid + 1);
 }
 /**
  * binary_search - searches input array for input value using 'linear search'
@@ -45,19 +43,18 @@ size_t find_size(size_t size, int compare)
 int binary_search(int *array, size_t size, int value)
 {
 	size_t mid;
+	int val_is_greater;
 
 	if (!array || !size)
 		return (-1);
+
 	print_array(array, size);
-	mid = size % 2 == 0 ? size / 2 - 1 : size / 2;
+	mid = (size - 1) / 2;
 	if (value == array[mid])
 		return (mid);
-	else if (value > array[mid])
-	{
-		size = find_size(size, 1);
-		array = array + mid + 1;
-	}
-	else
-		size = find_size(size, -1);
+
+	val_is_greater = value > array[mid];
+	size = find_size(size, mid, val_is_greater);
+	array += val_is_greater ? mid + 1 : 0;
 	return (binary_search(array, size, value));
 }
