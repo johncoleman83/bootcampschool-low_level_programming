@@ -1,83 +1,54 @@
 #include "search_algos.h"
-
 /**
  * print_array - prints the input array
  * @array: the input array
- * @size: the size of array
+ * @min: the minimum index number to print
+ * @max: the maximum index number to print
  */
-void print_array(int *array, size_t size)
+void print_array(int *array, size_t min, size_t max)
 {
-	size_t i = 0;
-
 	printf("Searching in array: ");
-	while (i < size)
+	while (min <= max)
 	{
-		printf("%d", array[i]);
-		printf("%s", i++ < size - 1 ? ", " : "\n");
+		printf("%d", array[min]);
+		printf("%s", min++ < max ? ", " : "\n");
 	}
 }
 /**
- * new_size - finds the new size of array
- * @size: the size of array
- * @mid: the middle that was checked
- * @val_is_greater: 1 or TRUE if val is greater than middle integer
- *
- * Return: the new size
- */
-size_t new_size(size_t size, size_t mid, int val_is_greater)
-{
-	if (size <= 1)
-		return (0);
-	if (val_is_greater && size % 2 != 0)
-		return (mid);
-	return (mid + 1);
-}
-/**
- * new_idx - finds the new index to return of array
- * @size: the size of array
- * @idx: the old index value
- * @val_is_greater: 1 or TRUE if val is greater than middle integer
- *
- * Return: the new index value
- */
-size_t new_idx(size_t size, size_t idx, int val_is_greater)
-{
-	if (val_is_greater)
-		idx = idx + (size) / 2 + (size == 2 ? 0 : 1);
-	else
-		idx = idx - (size) / 2;
-	return (idx);
-}
-/**
- * _abs - searches input array recursively for input value using 'binary search'
+ * _abs - searches input array recursively for input value with 'binary search'
+ *        method; this version accounts for duplicate values and returns the
+ *        index to the first found value
  * @array: the input array
- * @size: the size of array
- * @idx: the index to be checked
+ * @min: the minimum index of the array
+ * @max: the maximum index of the array
  * @value: the value to search for
  *
  * Return: the index of where the found value is or -1 on error
  */
-int _abs(int *array, size_t size, size_t idx, int value)
+int _abs(int *array, size_t min, size_t max, int value)
 {
 	size_t mid;
-	int val_is_greater;
 
-	if (!array || !size)
+	print_array(array, min, max);
+	mid = min + ((max - min) / 2);
+	if (value == array[mid])
+	{
+		if (array[mid - 1] == value)
+			return (_abs(array, min, mid, value));
+		else
+			return (mid);
+	}
+	if (min == max || max == 0)
 		return (-1);
 
-	print_array(array, size);
-	mid = (size - 1) / 2;
-	if (value == array[0])
-		return (idx);
-
-	val_is_greater = value > array[mid];
-	size = new_size(size, mid, val_is_greater);
-	array += val_is_greater ? mid + 1 : 0;
-	idx = new_idx(size, idx, val_is_greater);
-	return (_abs(array, size, idx, value));
+	if (value > array[mid])
+		min = mid + 1;
+	else
+		max = mid;
+	return (_abs(array, min, max, value));
 }
 /**
- * advanced_binary - searches input array for input value using 'linear search'
+ * advanced_binary - searches input array for input value using 'binary search'
  * @array: the input array
  * @size: the size of array
  * @value: the value to search for
@@ -86,7 +57,13 @@ int _abs(int *array, size_t size, size_t idx, int value)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	int idx = ((size - 1) / 2);
+	size_t min, max;
 
-	return (_abs(array, size, idx, value));
+	min = 0;
+	max = size ? size - 1 : 0;
+
+	if (array && size)
+		return (_abs(array, min, max, value));
+	else
+		return (-1);
 }
