@@ -74,10 +74,7 @@ int exponential_search(int *array, size_t size, int value)
 		{
 			check = two_power_of(exponent);
 			if (check >= size)
-			{
-				prev = two_power_of(exponent - 1);
 				i = size - 1;
-			}
 			else
 				i = check;
 
