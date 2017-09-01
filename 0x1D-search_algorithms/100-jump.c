@@ -31,7 +31,7 @@ int _ls(int *array, size_t min, size_t max, int value)
  */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t i, check, prev, step, range;
+	size_t i, prev, step, range;
 
 	range = (size_t)sqrt(size);
 
@@ -40,16 +40,14 @@ int jump_search(int *array, size_t size, int value)
 		step = prev = 0;
 		while (1 == 1)
 		{
-			check = step * range;
-			if (check >= size)
-				i = size - 1;
-			else
-				i = check;
+			i = step * range;
 
-			if (array[i] >= value || check >= size)
+			if (i >= size || array[i] >= value)
 			{
 				printf("Value found between indexes");
 				printf(" [%lu] and [%lu]\n", prev, i);
+				if (i >= size)
+					i = size - 1;
 				return (_ls(array, prev, i, value));
 			}
 
