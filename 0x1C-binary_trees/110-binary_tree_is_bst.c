@@ -16,8 +16,8 @@ int bst(const binary_tree_t *node, const binary_tree_t *min,
 
 	if (node)
 	{
-		checks += min ? min->n < node->n : 1;
-		checks += max ? max->n > node->n : 1;
+		checks += !min || min->n < node->n;
+		checks += !max || max->n > node->n;
 		checks += (bst(node->left, min, node) &&
 			   bst(node->right, node, max));
 		valid = checks == 3;
