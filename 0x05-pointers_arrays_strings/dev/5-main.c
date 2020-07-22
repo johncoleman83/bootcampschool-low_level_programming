@@ -1,14 +1,14 @@
-#include "holberton.h"
+#include "bootcamp.h"
 #include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code for Bootcamp School students.
  *
  * Return: Always 0.
  */
 int main(void)
 {
-    char s[] = "Holberton School!\n";
+    char s[] = "Bootcamp School!\n";
     char *p;
 
     p = string_toupper(s);

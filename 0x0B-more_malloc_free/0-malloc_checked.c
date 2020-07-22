@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * malloc_checked - allocates memory using malloc
  * @b: unsigned int of amount of needed memory

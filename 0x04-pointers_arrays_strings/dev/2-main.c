@@ -1,8 +1,8 @@
-#include "holberton.h"
+#include "bootcamp.h"
 #include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code for Bootcamp School students.
  *
  * Return: Always 0.
  */
@@ -11,7 +11,7 @@ int main(void)
     char *str;
     int len;
 
-    str = "Holberton!";
+    str = "Bootcamp!";
     len = _strlen(str);
     printf("%d\n", len);
     return (0);

@@ -1,8 +1,8 @@
-#include "holberton.h"
+#include "bootcamp.h"
 #include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code for Bootcamp School students.
  *
  * Return: Always 0.
  */
@@ -14,7 +14,7 @@ int main(void)
     printf("%d\n", r);
     r = is_palindrome("redder");
     printf("%d\n", r);
-    r = is_palindrome("holberton");
+    r = is_palindrome("bootcamp");
     printf("%d\n", r);
     r = is_palindrome("step on no pets");
     printf("%d\n", r);

@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 #include <stdio.h>
 /**
  * print_array - prints n number of indexes of an array

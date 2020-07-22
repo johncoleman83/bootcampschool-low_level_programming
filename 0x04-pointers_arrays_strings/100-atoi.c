@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 #include <stdio.h>
 /**
  * _atoi - returns integer values from string

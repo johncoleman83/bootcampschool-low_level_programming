@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * flip_bits - finds # of bits that need to be flipped to make new number
  * @n: number one to be flipped

@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * puts2 - prints every other char from a string
  * @str: input string

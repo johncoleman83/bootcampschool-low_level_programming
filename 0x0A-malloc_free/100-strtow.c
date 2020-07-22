@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * strncat_mod - concatenates string with n bytes from another string
  * @dest: destination string

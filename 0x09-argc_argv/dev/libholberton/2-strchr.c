@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * _strchr - locates a character in a string
  * @s: string input

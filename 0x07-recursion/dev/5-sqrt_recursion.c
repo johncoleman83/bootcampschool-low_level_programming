@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * check_divisor - find square root
  * @a: main number

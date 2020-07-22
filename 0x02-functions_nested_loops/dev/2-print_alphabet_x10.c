@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 
 /**
  * print_alphabet_x10 - prints the alphabet 10x

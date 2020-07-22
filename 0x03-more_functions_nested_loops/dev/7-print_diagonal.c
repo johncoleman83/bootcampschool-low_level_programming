@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 
 /**
  * print_diagonal - prints n length line

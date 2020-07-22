@@ -4,7 +4,7 @@
 #include "hash_tables.h"
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code for Bootcamp School students.
  *
  * Return: Always EXIT_SUCCESS.
  */
@@ -24,7 +24,7 @@ int main(void)
 	printf("success!\n");
     hash_table_set(ht, "Asterix", "Obelix");
 	printf("success!\n");
-    hash_table_set(ht, "Betty", "Holberton");
+    hash_table_set(ht, "Betty", "Bootcamp");
 	printf("success!\n");
     hash_table_set(ht, "98", "Battery Street");
 	printf("success!\n");

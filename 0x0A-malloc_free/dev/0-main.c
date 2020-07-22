@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -31,7 +31,7 @@ void simple_print_buffer(char *buffer, unsigned int size)
 }
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code for Bootcamp School students.
  *
  * Return: Always 0.
  */

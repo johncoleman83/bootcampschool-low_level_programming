@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 
 /**
  * print_numbers - prints digits 0 - 9

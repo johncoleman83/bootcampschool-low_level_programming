@@ -31,7 +31,7 @@ hash_node_t *add_hash_node(const char *key, const char *value)
 
 
 /**
- * hash_table_set - check the code for Holberton School students.
+ * hash_table_set - check the code for Bootcamp School students.
  * @ht: the hash table to be added to
  * @key: the key you want to add to the hash table
  * @value: the value associated with the key

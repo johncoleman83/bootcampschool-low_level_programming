@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * set_string - sets the value of a pointer to a char
  * @s: string to change

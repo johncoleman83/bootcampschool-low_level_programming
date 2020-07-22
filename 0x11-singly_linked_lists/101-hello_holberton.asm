@@ -1,8 +1,8 @@
-	.file	"101-hello_holberton.c"
+	.file	"101-hello_bootcamp.c"
 	.section	.rodata
 CLI
 .LC0:
-	.string	"Hello, Holberton"
+	.string	"Hello, Bootcamp"
 	.text
 	.globl	main
 	.type	main, @function

@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * cap_string - converts string words to be capitalized
  * @s: input string to have all words capitalized

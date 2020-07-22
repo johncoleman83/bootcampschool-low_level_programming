@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -19,7 +19,7 @@ void print_tab(char **tab)
 }
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code for Bootcamp School students.
  *
  * Return: 1 if an error occurred, 0 otherwise
  */

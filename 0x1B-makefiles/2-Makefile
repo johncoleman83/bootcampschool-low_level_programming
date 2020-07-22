@@ -1,6 +1,6 @@
 CC=gcc
-SRC=holberton.c main.c
-NAME=holberton
+SRC=bootcamp.c main.c
+NAME=bootcamp
 OBJ=$(patsubst %.c,%.o,$(SRC))
 
 all: $(OBJ)

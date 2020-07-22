@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * factorial - returns factorial of a number
  * @n: input number

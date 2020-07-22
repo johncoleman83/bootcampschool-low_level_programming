@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * end_func - function that deals with all standard errors
  * @num: exit status number or file descriptor

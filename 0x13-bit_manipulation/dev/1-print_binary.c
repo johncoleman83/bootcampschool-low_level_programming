@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * print_binary - prints binary representation of a number
  * @n: input number to be converted to binary

@@ -4,14 +4,14 @@
 char *_strstr(char *, char *);
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code for Bootcamp School students.
  *
  * Return: Always 0.
  */
 int main(void)
 {
 	char *s = "First, solve the problem. Then, write the code.";
-	char *f = "Holberton";
+	char *f = "Bootcamp";
 	char *t;
 
 	t = _strstr(s, f);

@@ -1,5 +1,5 @@
 CC=gcc
-SRC=holberton.c main.c
+SRC=bootcamp.c main.c
 
 all: $(SRC)
-	$(CC) $(SRC) -o holberton
+	$(CC) $(SRC) -o bootcamp

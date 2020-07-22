@@ -3,7 +3,7 @@
 Find the password for this program.
 
 ```
-julien@holberton:~/0x13. Binary$ ./crackme3 `cat 101-password`
+julien@bootcamp:~/0x13. Binary$ ./crackme3 `cat 101-password`
 Congratulations!
-julien@holberton:~/0x13. Binary$ 
+julien@bootcamp:~/0x13. Binary$ 
 ```

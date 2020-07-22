@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * reset_to_98 - changes value that *n points to
  * @n: pointer to n

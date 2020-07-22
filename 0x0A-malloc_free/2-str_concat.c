@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * str_concat - concatenates two strings
  * @s1: input string 1

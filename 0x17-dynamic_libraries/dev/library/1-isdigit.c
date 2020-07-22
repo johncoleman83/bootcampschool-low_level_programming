@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * _isdigit - checks if input's ascii value is digit 0-9
  * @c: input variable to check ascii value

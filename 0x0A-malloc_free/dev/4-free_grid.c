@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * free_grid - frees a 2D grid previously created
  * @grid: input pointer to grid or 2D array

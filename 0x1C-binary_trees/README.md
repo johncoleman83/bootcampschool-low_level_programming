@@ -1,6 +1,6 @@
 # Binary Trees
 
-This Repo has some of my (David John Coleman II) projects for Holberton School.
+This Repo has some of my (David John Coleman II) projects for Bootcamp School.
 The focus of these projects is learning about Binary Trees
 
 ## Environment

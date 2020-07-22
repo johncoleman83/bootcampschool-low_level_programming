@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 
 /**
  * times_table - prints 9x table

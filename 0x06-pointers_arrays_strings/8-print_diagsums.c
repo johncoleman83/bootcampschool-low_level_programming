@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 #include <stdio.h>
 /**
  * print_diagsums - prints sum of #'s in diagnols of square

@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "holberton.h"
+#include "bootcamp.h"
 #include <limits.h>
 /**
- * main - check the code for Holberton School students.
+ * main - check the code for Bootcamp School students.
  *
  * Return: Always 0.
  */

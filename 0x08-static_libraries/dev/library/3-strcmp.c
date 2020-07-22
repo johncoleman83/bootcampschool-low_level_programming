@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * _strcmp - checks if 2 strings are of equal value
  * @s1: destination string

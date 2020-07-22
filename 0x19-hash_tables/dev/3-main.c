@@ -4,7 +4,7 @@
 #include "hash_tables.h"
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code for Bootcamp School students.
  *
  * Return: Always EXIT_SUCCESS.
  */
@@ -16,13 +16,13 @@ int main(void)
 /* hetairas collides with mentioner*/
 
     ht = hash_table_create(1024);
-	hash_table_set(ht, "betty", "holberton");
+	hash_table_set(ht, "betty", "bootcamp");
 	idx = key_index("betty", 1024);
 	printf("new key: %s, new val: %s, next = %p\n", (ht->array[idx])->key,
 		   (ht->array[idx])->value, (void *)(ht->array[idx])->next);
 
 
-	hash_table_set(ht, "hetairas", "holberton");
+	hash_table_set(ht, "hetairas", "bootcamp");
 	idx = key_index("hetairas", 1024);
 	printf("new key %s, new val: %s, next = %p\n", (ht->array[idx])->key,
 		   (ht->array[idx])->value, (void *)(ht->array[idx])->next);

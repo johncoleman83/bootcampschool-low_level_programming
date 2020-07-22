@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 
 /**
  * add - adds 2 integers

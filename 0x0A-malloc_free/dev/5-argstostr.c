@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * argstostr - concatenates all the arguments of program
  * @ac: count of args

@@ -4,7 +4,7 @@
 #include "hash_tables.h"
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code for Bootcamp School students.
  *
  * Return: Always EXIT_SUCCESS.
  */

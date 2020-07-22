@@ -8,6 +8,6 @@
 
 int main()
 {
-	printf("Hello, Holberton!\n");
+	printf("Hello, Bootcamp!\n");
 	return '0';
 }

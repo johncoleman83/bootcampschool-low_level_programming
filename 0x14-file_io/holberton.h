@@ -1,5 +1,5 @@
-#ifndef _HOLBERTON_H_
-#define _HOLBERTON_H_
+#ifndef _BOOTCAMP_H_
+#define _BOOTCAMP_H_
 #define BUFLEN 1024
 #include <stdio.h>
 #include <stdlib.h>

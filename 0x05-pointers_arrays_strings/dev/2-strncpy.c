@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * _strncpy - copies string from source to destination
  * @dest: destination string

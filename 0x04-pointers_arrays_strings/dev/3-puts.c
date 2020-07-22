@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * _puts - prints string from pointer to string
  * @str: string to print

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * _strdup - copies input string in newly allocated memory
  * @str: input string

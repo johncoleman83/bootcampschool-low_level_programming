@@ -1,9 +1,9 @@
-#include "holberton.h"
+#include "bootcamp.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code for Bootcamp School students.
  *
  * Return: Always 0.
  */
@@ -11,7 +11,7 @@ int main(void)
 {
     char *s;
 
-    s = _strdup("Holberton");
+    s = _strdup("Bootcamp");
     if (s == NULL)
     {
         printf("failed to allocate memory\n");

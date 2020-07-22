@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "bootcamp.h"
 /**
  * set_bit - sets value of bit to 1 at given index
  * @n: pointer to unsigned int
