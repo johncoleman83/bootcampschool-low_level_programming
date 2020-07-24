@@ -19,7 +19,7 @@ void print_tab(char **tab)
 }
 
 /**
- * main - check the code for Bootcamp School students.
+ * main - check the code for a software development program students.
  *
  * Return: 1 if an error occurred, 0 otherwise
  */

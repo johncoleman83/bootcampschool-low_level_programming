@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - check the code for Bootcamp School students.
+ * main - check the code for a software development program students.
  *
  * Return: Always 0.
  */

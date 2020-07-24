@@ -4,7 +4,7 @@
 #include "hash_tables.h"
 
 /**
- * main - check the code for Bootcamp School students.
+ * main - check the code for a software development program students.
  *
  * Return: Always EXIT_SUCCESS.
  */
@@ -16,8 +16,8 @@ int main(void)
 /* hetairas collides with mentioner*/
 
     ht = hash_table_create(1024);
-	hash_table_set(ht, "betty", "bootcamp");
-	idx = key_index("betty", 1024);
+	hash_table_set(ht, "namesake", "bootcamp");
+	idx = key_index("namesake", 1024);
 	printf("new key: %s, new val: %s, next = %p\n", (ht->array[idx])->key,
 		   (ht->array[idx])->value, (void *)(ht->array[idx])->next);
 
@@ -27,8 +27,8 @@ int main(void)
 	printf("new key %s, new val: %s, next = %p\n", (ht->array[idx])->key,
 		   (ht->array[idx])->value, (void *)(ht->array[idx])->next);
 
-	hash_table_set(ht, "betty", "jimmy crack corn");
-	idx = key_index("betty", 1024);
+	hash_table_set(ht, "namesake", "jimmy crack corn");
+	idx = key_index("namesake", 1024);
 	printf("new key %s, new val: %s, next = %p\n", (ht->array[idx])->key,
 		   (ht->array[idx])->value, (void *)(ht->array[idx])->next);
 

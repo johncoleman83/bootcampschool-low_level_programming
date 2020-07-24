@@ -2,7 +2,7 @@
 
 ## Description
 
-This Repo has some of my (David John Coleman II) projects for Bootcamp School.
+This Repo has some of my (David John Coleman II) projects for a software development program.
 The focus of these projects is learning the C Programming Language.  In
 specific, these projects are designed to show how the GNU C Compiler functions,
 Bootcamp C Language syntax and style recommendations.  And how to print a basic

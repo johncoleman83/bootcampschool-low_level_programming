@@ -2,13 +2,13 @@
 #include <stdio.h>
 
 /**
- * main - check the code for Bootcamp School students.
+ * main - check the code for a software development program students.
  *
  * Return: Always 0.
  */
 int main(void)
 {
-    char s[] = "Bootcamp School!\n";
+    char s[] = "a software development program!\n";
     char *p;
 
     p = string_toupper(s);

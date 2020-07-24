@@ -1,6 +1,6 @@
 # Binary Trees
 
-This Repo has some of my (David John Coleman II) projects for Bootcamp School.
+This Repo has some of my (David John Coleman II) projects for a software development program.
 The focus of these projects is learning about Binary Trees
 
 ## Environment
